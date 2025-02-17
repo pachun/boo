@@ -1,0 +1,15 @@
+cask "rectangle"
+cask "gitx"
+cask "ghostty"
+cask "chatgpt"
+cask "spotify"
+cask "nordvpn"
+brew "zsh-syntax-highlighting"
+brew "neovim"
+brew "asdf"
+brew "tmux"
+brew "yarn"
+brew "lazygit"
+brew "elixir"
+brew "ripgrep" # dependency of nvim's telescope's live_grep
+brew "git-delta" # used by lazygit

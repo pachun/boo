@@ -1,0 +1,34 @@
+# ---
+# necessary on modern macs
+# ---
+
+# the default font spacing is too wide
+adjust-cell-width = -4%
+# retina displays need thicker fonts
+font-thicken = true
+# use all available colors
+window-colorspace = display-p3
+# "greatly enhances the terminal experience"
+shell-integration = zsh
+# zsh needs this to respect ghostty's cursor preferences
+shell-integration-features = no-cursor
+# shift-select text
+mouse-shift-capture = true
+# system clipboard copy/paste
+clipboard-read = allow
+clipboard-write = allow
+
+# ---
+# preferences
+# ---
+
+font-size = 16
+font-family = MonoLisa
+theme = dark:catppuccin-frappe,light:catppuccin-latte
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+# disable ligatures
+font-feature=-calt, -liga, -dlig
+# remove the folder icon from the tab bar
+macos-titlebar-style = tabs
