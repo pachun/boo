@@ -2,7 +2,8 @@
 
 Puck Drop is a set of steps that I use to set up new or re-imaged Mac machines.
 
-[Install Xcode](https://apps.apple.com/us/app/xcode/id497799835?mt=12)
+[Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
+[Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
 
 - System Settings → Trackpad → Tracking Speed → Move the slider all the way to the right
 - System Settings → Trackpad → Tap to Click → On
