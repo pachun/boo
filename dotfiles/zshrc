@@ -133,6 +133,10 @@ function enable_asdf_autocompletion {
   autoload -Uz compinit && compinit -C
 }
 
+function use_direnv {
+  eval "$(direnv hook zsh)"
+}
+
 use_vim_mode_on_cli
 use_jj_instead_of_escape
 enable_colorized_output_for_commands_which_support_it_like_ls
@@ -143,6 +147,7 @@ enable_git_command_tab_completions
 setup_asdf
 enable_asdf_autocompletion
 export LAZYGIT_CONFIG_DIR="$HOME/.config/lazygit"
+use_direnv
 
 # keep at end
 enable_zsh_syntax_highlighting
