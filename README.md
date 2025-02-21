@@ -26,6 +26,12 @@ Install [homebrew](https://brew.sh/), install [applications](https://github.com/
 git clone git@github.com:pachun/puck-drop.git && cd puck-drop && ./install.sh
 ```
 
+Start postgres.
+
+```sh
+brew services start postgresql@17
+```
+
 ## Updating homebrew apps
 
 1. Add an app to your Brewfile

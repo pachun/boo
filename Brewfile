@@ -13,3 +13,4 @@ brew "lazygit"
 brew "elixir"
 brew "ripgrep" # dependency of nvim's telescope's live_grep
 brew "git-delta" # used by lazygit
+brew "postgresql@17"
