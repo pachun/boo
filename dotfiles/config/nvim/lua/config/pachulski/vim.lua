@@ -69,7 +69,7 @@ _G.toggle_session = function()
 end
 vim.api.nvim_set_keymap("n", "<leader>d+", ":lua _G.toggle_session()<CR>", { noremap = true, silent = true })
 
--- set diagnostic icons
+-- set diagnostic icons & messages
 local signs = {
 	Error = "",
 	Warn = "",
@@ -77,9 +77,6 @@ local signs = {
 	Info = "",
 }
 
-for type, icon in pairs(signs) do
-	vim.fn.sign_define("DiagnosticSign" .. type, { text = icon .. " ", texthl = "DiagnosticSign" .. type })
-end
 vim.diagnostic.config({
 	virtual_text = {
 		format = function(diagnostic)
@@ -89,18 +86,26 @@ vim.diagnostic.config({
 				[vim.diagnostic.severity.INFO] = signs.Info,
 				[vim.diagnostic.severity.HINT] = signs.Hint,
 			}
-			return string.format("%s %s", icons[diagnostic.severity], diagnostic.message)
+
+			return string.format(
+				"%s %s [%s %s]",
+				icons[diagnostic.severity],
+				diagnostic.message,
+				diagnostic.source,
+				diagnostic.code
+			)
 		end,
 		prefix = "",
 		spacing = 2,
 	},
-	-- keep gutter signs
-	signs = true,
+	-- remove gutter signs
+	signs = false,
 	-- don't update lsp diagnostics while typing
 	update_in_insert = false,
 	-- don't underline errors
-	uderline = false,
+	underline = false,
 })
+vim.opt.signcolumn = "no"
 
 -- Rename tmux window when nvim opens
 if vim.fn.exists("$TMUX") == 1 then
