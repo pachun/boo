@@ -15,15 +15,14 @@ local formatters = {
 
 return {
 	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		dependencies = { "williamboman/mason.nvim" },
+		"stevearc/conform.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+		},
 		config = function()
 			require("mason-tool-installer").setup({ ensure_installed = vim.tbl_keys(formatters) })
-		end,
-	},
-	{
-		"stevearc/conform.nvim",
-		config = function()
+
 			local formatters_by_ft = function(f)
 				local formatted_map = {}
 				for formatter, languages in pairs(f) do
