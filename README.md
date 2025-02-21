@@ -11,6 +11,7 @@ Puck Drop is a set of steps that I use to set up new or re-imaged Mac machines.
 - System Settings → Trackpad → Tap to Click → On
 - System Settings → Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
 - System Settings → Desktop & Dock → Automatically hide and show the Dock → On
+- System Settings → Desktop & Dock → Desktop & State Manager → Click wallpaper to reveal desktop → Only in State Manager
 - System Settings → Control Center → Battery → Show Percentage → On
 - System Settings → Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
