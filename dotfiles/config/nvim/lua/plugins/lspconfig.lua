@@ -37,6 +37,11 @@ local lsp_keymaps = {
 		command = "gd",
 		action = "<cmd>Telescope lsp_definitions<CR>",
 	},
+	{
+		description = "Find References",
+		command = "gr",
+		action = "<cmd>Telescope lsp_references<CR>",
+	},
 }
 
 return {
