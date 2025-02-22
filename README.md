@@ -8,6 +8,8 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 
 [Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
 
+[Install Bear](https://apps.apple.com/us/app/bear-markdown-notes/id1091189122)
+
 [Install ColorSlurp](https://apps.apple.com/us/app/colorslurp/id1287239339)
 
 [Install Affinity Photo](https://apps.apple.com/us/app/affinity-photo-2-image-editor/id1616822987)
