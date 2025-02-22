@@ -104,6 +104,10 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	-- don't underline errors
 	underline = false,
+	float = {
+		header = "",
+		border = "rounded",
+	},
 })
 vim.opt.signcolumn = "no"
 
