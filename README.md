@@ -2,7 +2,7 @@
 
 _The lazy ghost_.
 
-Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes some manual steps and then some automated steps to install my apps and setup my terminal, ([Ghostty](https://ghostty.org)), along with my dotfiles which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
+Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes manual and automated steps to install my apps and setup my terminal, ([Ghostty](https://ghostty.org)), along with my dotfiles which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
 
 [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 [Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
