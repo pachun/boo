@@ -22,6 +22,8 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 - System Settings → Control Center → Battery → Show Percentage → On
 - System Settings → Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
+On your iPhone: Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
+
 Remove all but Finder and Trash from the dock.
 
 In Finder's preferences, adjust what's in the sidebar. Favorites should be `~` and `Applications`. iCloud should only be `iCloud Drive`. Locations should only be `Machintosh HD`. Tags are useless. Remove everything not mentioned here.
