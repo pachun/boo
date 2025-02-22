@@ -3,7 +3,7 @@ local linters = {
 		"javascript",
 		"typescript",
 		"javascriptreact",
-		"typescript_react",
+		"typescriptreact",
 	},
 }
 
