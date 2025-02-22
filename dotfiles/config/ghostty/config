@@ -22,7 +22,7 @@ clipboard-write = allow
 # preferences
 # ---
 
-font-size = 16
+font-size = 15
 font-family = MonoLisa
 theme = dark:catppuccin-frappe,light:catppuccin-latte
 cursor-style = block
