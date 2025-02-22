@@ -1,6 +1,8 @@
-# Puck Drop
+# Boo
 
-Puck Drop is a set of steps that I use to set up new or re-imaged Mac machines.
+_The lazy ghost_.
+
+Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes some manual steps and then some automated steps to install my apps and setup my terminal ([Ghostty](https://ghostty.org)), along with my dotfiles which mainly configure [Neovim](https://neovim.io) and [Lazy.nvim](https://lazy.folke.io/).
 
 [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 [Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
@@ -38,8 +40,20 @@ brew services start postgresql@17
 ## Updating homebrew apps
 
 1. Add an app to your Brewfile
-2. Run `brew bundle`
+1. Run `brew bundle`
 
 ## Updating dotfiles
 
-Run `./dotfiles.sh`
+Since dotfiles are symlinked, you only need to run this if you add a new dotfile. You don't need to run this if you edit an existing dotfile.
+
+```sh
+./dotfiles.sh
+```
+
+## Modifying lazy plugins
+
+To modify a lazy.nvim plugin, type `lplug [name]`. For example:
+
+```sh
+lplug lualine
+```
