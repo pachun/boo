@@ -137,6 +137,10 @@ function use_direnv {
   eval "$(direnv hook zsh)"
 }
 
+function tell_lazygit_to_use_home_folder_config {
+  export XDG_CONFIG_HOME="$HOME/.config"
+}
+
 use_vim_mode_on_cli
 use_jj_instead_of_escape
 enable_colorized_output_for_commands_which_support_it_like_ls
@@ -146,7 +150,7 @@ use_aliases
 enable_git_command_tab_completions
 setup_asdf
 enable_asdf_autocompletion
-export LAZYGIT_CONFIG_DIR="$HOME/.config/lazygit"
+tell_lazygit_to_use_home_folder_config
 use_direnv
 
 # keep at end

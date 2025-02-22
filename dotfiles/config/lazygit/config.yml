@@ -1,2 +1,6 @@
-gui:
-  showCommandLog: false
+git:
+  commitEditing: external
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  paging:
+    colorArg: always
+    pager: "delta --paging=never"
