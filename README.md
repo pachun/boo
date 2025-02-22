@@ -28,10 +28,10 @@ Open a Finder folder window and change the view type from icon to list.
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
-Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/puck-drop/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/puck-drop/blob/main/dotfiles) by running:
+Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/boo/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) by running:
 
 ```sh
-git clone git@github.com:pachun/puck-drop.git && cd puck-drop && ./install.sh
+git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
 
 Start postgres.
