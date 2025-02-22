@@ -53,8 +53,8 @@ vim.opt.softtabstop = 2
 vim.opt.tabstop = 2
 
 -- Vim split hotkeys
-vim.keymap.set("n", "<leader>d|", "<C-w>v", { desc = "Split window vertically" })
-vim.keymap.set("n", "<leader>d_", "<C-w>s", { desc = "Split window horizontally" })
+vim.keymap.set("n", "<leader>f|", "<C-w>v", { desc = "Split window vertically" })
+vim.keymap.set("n", "<leader>f_", "<C-w>s", { desc = "Split window horizontally" })
 
 -- <leader>+ toggles maximizing the current pane, like tmux
 _G.toggle_session = function()
@@ -67,7 +67,7 @@ _G.toggle_session = function()
 		vim.cmd("wincmd o") -- Maximize current pane (Ctrl-w o)
 	end
 end
-vim.api.nvim_set_keymap("n", "<leader>d+", ":lua _G.toggle_session()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>f+", ":lua _G.toggle_session()<CR>", { noremap = true, silent = true })
 
 -- set diagnostic icons & messages
 local signs = {
