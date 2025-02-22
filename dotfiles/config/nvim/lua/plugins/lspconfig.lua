@@ -1,5 +1,11 @@
 local language_server_configs_by_name = {
-	ts_ls = {},
+	ts_ls = {
+		on_attach = function(client, _)
+			-- Disable formatting from tsserver
+			-- We use prettier
+			client.server_capabilities.documentFormattingProvider = false
+		end,
+	},
 	lua_ls = {
 		settings = {
 			Lua = {
