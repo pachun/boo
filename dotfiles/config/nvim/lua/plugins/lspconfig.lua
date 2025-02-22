@@ -32,6 +32,11 @@ local lsp_keymaps = {
 		command = "]d",
 		action = vim.diagnostic.goto_next,
 	},
+	{
+		description = "Show LSP Definitions",
+		command = "gd",
+		action = "<cmd>Telescope lsp_definitions<CR>",
+	},
 }
 
 return {
