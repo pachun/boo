@@ -98,6 +98,10 @@ vim.diagnostic.config({
 		prefix = "",
 		spacing = 2,
 	},
+	-- show diagnostic details in a nicer popup
+	float = {
+		border = "rounded",
+	},
 	-- remove gutter signs
 	signs = false,
 	-- don't update lsp diagnostics while typing
