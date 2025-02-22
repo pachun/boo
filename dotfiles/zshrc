@@ -135,6 +135,8 @@ function enable_asdf_autocompletion {
 
 function use_direnv {
   eval "$(direnv hook zsh)"
+  # silence loading & unloading env var output
+  export DIRENV_LOG_FORMAT=""
 }
 
 function tell_lazygit_to_use_home_folder_config {
