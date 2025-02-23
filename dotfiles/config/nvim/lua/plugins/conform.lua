@@ -1,45 +1,27 @@
-local formatters = {
-	prettier = {
-		"javascript",
-		"typescript",
-		"javascriptreact",
-		"typescriptreact",
-		"css",
-		"html",
-		"json",
-		"yaml",
-		"markdown",
-	},
-	stylua = { "lua" },
-}
-
 return {
-	{
-		"stevearc/conform.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-			"WhoIsSethDaniel/mason-tool-installer.nvim",
-		},
-		config = function()
-			require("mason-tool-installer").setup({ ensure_installed = vim.tbl_keys(formatters) })
+  {
+    "stevearc/conform.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "WhoIsSethDaniel/mason-tool-installer.nvim",
+    },
+    config = function()
+      local conform = require("conform")
+      local mason_tool_installer = require("mason-tool-installer")
+      local formatters = require("config.pachulski.formatters")
+      local helpers = require("config.pachulski.helpers")
 
-			local formatters_by_ft = function(f)
-				local formatted_map = {}
-				for formatter, languages in pairs(f) do
-					for _, language in ipairs(languages) do
-						formatted_map[language] = { formatter }
-					end
-				end
-				return formatted_map
-			end
+      mason_tool_installer.setup({
+        ensure_installed = vim.tbl_keys(formatters),
+      })
 
-			require("conform").setup({
-				formatters_by_ft = formatters_by_ft(formatters),
-				format_on_save = {
-					timeout_ms = 500,
-					lsp_format = "fallback",
-				},
-			})
-		end,
-	},
+      conform.setup({
+        formatters_by_ft = helpers.flip_table(formatters),
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_format = "fallback",
+        },
+      })
+    end,
+  },
 }
