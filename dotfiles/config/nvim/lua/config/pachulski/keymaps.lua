@@ -163,13 +163,17 @@ local keymaps = {
 			description = "Show lsp definitions",
 			mode = "n",
 			command = "gd",
-			action = "<cmd>Telescope lsp_definitions<CR>",
+			action = function()
+				require("telescope.builtin").lsp_definitions()
+			end,
 		},
 		{
-			description = "Find references",
+			description = "Show lsp references",
 			mode = "n",
 			command = "gr",
-			action = "<cmd>Telescope lsp_references<CR>",
+			action = function()
+				require("telescope.builtin").lsp_references()
+			end,
 		},
 	},
 }
