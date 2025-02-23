@@ -20,20 +20,20 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 
 ## System Settings
 
-- System Settings → Trackpad → Tracking Speed → Move the slider all the way to the right
-- System Settings → Trackpad → Tap to Click → On
-- System Settings → Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
-- System Settings → Desktop & Dock → Automatically hide and show the Dock → On
-- System Settings → Desktop & Dock → Desktop & State Manager → Click wallpaper to reveal desktop → Only in State Manager
-- System Settings → Control Center → Battery → Show Percentage → On
-- System Settings → Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
+- Trackpad → Tracking Speed → Move the slider all the way to the right
+- Trackpad → Tap to Click → On
+- Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
+- Desktop & Dock → Automatically hide and show the Dock → On
+- Desktop & Dock → Desktop & State Manager → Click wallpaper to reveal desktop → Only in State Manager
+- Control Center → Battery → Show Percentage → On
+- Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
 ## Finder Settings
 
 - Remove all but Finder and Trash from the dock.
-- Finder → Settings → General → New Finder windows show → `~`
-- Finder → Settings → Sidebar → **only** `~`, `icloud documents`, and `Applications`
-- Finder → `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
+- `⌘,` → General → New Finder windows show → `~`
+- `⌘,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
+- `⌘n` → Click "View as List" → `⌘j` → Always open in list view → On → Use as Defaults
 
 ## iPhone Settings
 
