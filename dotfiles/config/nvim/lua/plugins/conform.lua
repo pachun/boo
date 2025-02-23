@@ -3,7 +3,7 @@ local formatters = {
 		"javascript",
 		"typescript",
 		"javascriptreact",
-		"typescript_react",
+		"typescriptreact",
 		"css",
 		"html",
 		"json",
