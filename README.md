@@ -48,7 +48,7 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/boo/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) by running:
 
 ```sh
-git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
+mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
 
 Start postgres.
