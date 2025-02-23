@@ -26,7 +26,7 @@ On your iPhone: Settings → Apps → Messages → Text Message Forwarding → N
 
 Remove all but Finder and Trash from the dock.
 
-In Finder's preferences, adjust what's in the sidebar. Favorites should be `~`, `Applications`, and `icloud documents`. Remove locations, icloud and tags sections.
+In Finder's preferences, adjust what's in the sidebar. Favorites should be `~`, `Applications`, and `icloud documents`. Remove the locations, icloud and tags sections.
 
 Open a Finder folder window and change the view type from icon to list.
 
