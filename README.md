@@ -26,11 +26,13 @@ On your iPhone: Settings → Apps → Messages → Text Message Forwarding → N
 
 Remove all but Finder and Trash from the dock.
 
-In Finder's preferences, adjust what's in the sidebar. Favorites should be `~` and `Applications`. iCloud should only be `iCloud Drive`. Locations should only be `Machintosh HD`. Tags are useless. Remove everything not mentioned here.
+In Finder's preferences, adjust what's in the sidebar. Favorites should be `~`, `Applications`, and `icloud documents`. Remove locations, icloud and tags sections.
 
 Open a Finder folder window and change the view type from icon to list.
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
+
+## After Xcode is installed
 
 Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/boo/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) by running:
 
@@ -44,23 +46,52 @@ Start postgres.
 brew services start postgresql@17
 ```
 
-## Updating homebrew apps
+## Add a dotfile
 
-1. Add an app to your Brewfile
-1. Run `brew bundle`
+Since dotfiles are symlinked, you only need the following to add _new_ dotfiles. Existing dotfiles will "just work".
 
-## Updating dotfiles
-
-Since dotfiles are symlinked, you only need to run this if you add a new dotfile. You don't need to run this if you edit an existing dotfile.
+[Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
 
 ```sh
 ./dotfiles.sh
 ```
 
-## Modifying lazy plugins
+## Add a homebrew app
 
-To modify a lazy.nvim plugin, type `lplug [name]`. For example:
+[Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile)
 
 ```sh
-lplug lualine
+brew bundle
+```
+
+## Add a keymap
+
+[Add a keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
+
+## Add an option
+
+[Add an option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
+
+## Add a Syntax highlighter
+
+[Add a syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
+
+## Add a language server
+
+[Add a language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
+
+## Add a formatter
+
+[Add a formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
+
+## Add a linter
+
+[Add a linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
+
+## Add/Edit a lazy plugin
+
+[Existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)
+
+```sh
+lplug plugin-name
 ```

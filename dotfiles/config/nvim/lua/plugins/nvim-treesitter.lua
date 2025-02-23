@@ -2,44 +2,15 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
+		local treesitter_config = require("nvim-treesitter.configs")
+		local syntax_highlighters = require("config.pachulski.syntax_highlighters")
+
+		treesitter_config.setup({
 			highlight = { enable = true },
 			indent = { enable = true },
 			incremental_selection = { enable = true },
 			autotag = { enable = true },
-			ensure_installed = {
-				"bash",
-				"c",
-				"css",
-				"csv",
-				"diff",
-				"dockerfile",
-				"elixir",
-				"elm",
-				"git_config",
-				"git_rebase",
-				"gitcommit",
-				"gitignore",
-				"go",
-				"html",
-				"java",
-				"javascript",
-				"json",
-				"lua",
-				"markdown",
-				"markdown_inline",
-				"objc",
-				"python",
-				"ruby",
-				"scss",
-				"swift",
-				"tmux",
-				"tsx",
-				"typescript",
-				"vim",
-				"vimdoc",
-				"yaml",
-			},
+			ensure_installed = syntax_highlighters,
 		})
 	end,
 }

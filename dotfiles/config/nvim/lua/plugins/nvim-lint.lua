@@ -1,34 +1,19 @@
-local linters = {
-	eslint_d = {
-		"javascript",
-		"typescript",
-		"javascriptreact",
-		"typescriptreact",
-	},
-}
-
 return {
 	"mfussenegger/nvim-lint",
 	dependencies = { "rshkarin/mason-nvim-lint" },
 	config = function()
-		require("mason-nvim-lint").setup({
-			ensure_installed = vim.tbl_keys(linters),
-		})
+		local mason_nvim_lint = require("mason-nvim-lint")
+		local lint = require("lint")
 
-		local linters_by_ft = function(f)
-			local formatted_map = {}
-			for linter, filetype in pairs(f) do
-				for _, language in ipairs(filetype) do
-					formatted_map[language] = { linter }
-				end
-			end
-			return formatted_map
-		end
+		local helpers = require("config.pachulski.helpers")
+		local linters = require("config.pachulski.linters")
 
-		require("lint").linters_by_ft = linters_by_ft(linters)
+		mason_nvim_lint.setup({ ensure_installed = vim.tbl_keys(linters) })
+
+		lint.linters_by_ft = helpers.flip_table(linters)
 		vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "TextChanged", "InsertLeave" }, {
 			callback = function()
-				require("lint").try_lint()
+				lint.try_lint()
 			end,
 		})
 	end,

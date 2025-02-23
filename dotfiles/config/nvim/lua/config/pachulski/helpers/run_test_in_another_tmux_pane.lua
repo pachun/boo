@@ -157,7 +157,7 @@ local test_types = {
 	},
 }
 
-function RunTest(test_location)
+local function run_test_in_another_tmux_pane(test_location)
 	for _, test_type in pairs(test_types) do
 		if test_type.is_test_file() then
 			return run_in_first_available_tmux_pane_in_the_same_working_directory(test_type[test_location]())
@@ -165,8 +165,4 @@ function RunTest(test_location)
 	end
 end
 
-local opts = { noremap = true, silent = true }
-
-vim.api.nvim_set_keymap("n", "<leader>s", ":lua RunTest('nearest')<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>t", ":lua RunTest('file')<CR>", opts)
-vim.api.nvim_set_keymap("n", "<leader>a", ":lua RunTest('all')<CR>", opts)
+return run_test_in_another_tmux_pane

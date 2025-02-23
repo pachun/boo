@@ -100,7 +100,8 @@ function use_aliases {
   alias c=clear
   alias vim=nvim
   alias t=tmux
-#  alias x=gitx
+  alias x=gitx
+  alias p='git push origin $(git rev-parse --abbrev-ref HEAD)'
   alias gs="git status"
   alias gl="git log"
   alias gco="git checkout"
