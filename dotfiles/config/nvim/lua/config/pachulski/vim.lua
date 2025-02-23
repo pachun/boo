@@ -25,8 +25,9 @@ vim.opt.number = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- show line statuses to the left of line numbers; a bunch of plugins will use this. when not in use, it makes the gutter fatter
-vim.opt.signcolumn = "yes"
+-- hide line statuses to the left of line numbers; they make the gutter fatter and
+-- take up space which doesn't need to be taken up. Less is less.
+vim.opt.signcolumn = "no"
 
 -- show grey icons for whitespace characters like tabs
 vim.opt.list = true
@@ -109,7 +110,6 @@ vim.diagnostic.config({
 		border = "rounded",
 	},
 })
-vim.opt.signcolumn = "no"
 
 -- Rename tmux window when nvim opens
 if vim.fn.exists("$TMUX") == 1 then
