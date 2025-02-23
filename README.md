@@ -14,9 +14,9 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 
 [Install Affinity Photo](https://apps.apple.com/us/app/affinity-photo-2-image-editor/id1616822987)
 
-[Install the MonoLisa font](https://github.com/pachun/boo/tree/main/assets/MonoLisa).
+[Install the MonoLisa font](https://github.com/pachun/boo/tree/main/assets/MonoLisa)
 
-[Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png).
+[Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png)
 
 - System Settings → Trackpad → Tracking Speed → Move the slider all the way to the right
 - System Settings → Trackpad → Tap to Click → On
