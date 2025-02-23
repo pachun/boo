@@ -1,0 +1,12 @@
+dotfiles/*
+!dotfiles/gitconfig
+!dotfiles/gitignore
+!dotfiles/hushlogin
+!dotfiles/tmux.conf
+!dotfiles/zshrc
+!dotfiles/config/
+
+dotfiles/config/*
+!dotfiles/config/ghostty
+!dotfiles/config/lazygit
+!dotfiles/config/nvim
