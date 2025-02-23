@@ -51,7 +51,7 @@ Install [homebrew](https://brew.sh/), install [applications](https://github.com/
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
 
-Wait for that to finish; Then start postgres.
+Wait for that to finish and then start postgres.
 
 ```sh
 brew services start postgresql@17
