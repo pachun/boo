@@ -31,9 +31,9 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 ## Finder Settings
 
 - Remove all but Finder and Trash from the dock.
-- `⌘,` → General → New Finder windows show → `~`
-- `⌘,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
-- `⌘n` → Click "View as List" → `⌘j` → Always open in list view → On → Use as Defaults
+- `⌘ ,` → General → New Finder windows show → `~`
+- `⌘ ,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
+- `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
 
 ## iPhone Settings
 
