@@ -18,6 +18,8 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 
 [Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png)
 
+## System Settings
+
 - System Settings → Trackpad → Tracking Speed → Move the slider all the way to the right
 - System Settings → Trackpad → Tap to Click → On
 - System Settings → Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
@@ -26,13 +28,18 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 - System Settings → Control Center → Battery → Show Percentage → On
 - System Settings → Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
-On your iPhone: Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
+## Finder Settings
 
-Remove all but Finder and Trash from the dock.
+- Remove all but Finder and Trash from the dock.
+- Finder → Settings → General → New Finder windows show → `~`
+- Finder → Settings → Sidebar → **only** `~`, `icloud documents`, and `Applications`
+- Finder → `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
 
-Finder → Settings → General → New Finder windows show → `~`
-Finder → Settings → Sidebar → **only** `~`, `icloud documents`, and `Applications`
-Finder → `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
+## iPhone Settings
+
+- Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
+
+## GitHub Setup
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
