@@ -32,6 +32,9 @@ vim.opt.signcolumn = "no"
 -- show grey icons for whitespace characters like tabs
 vim.opt.list = true
 
+-- hide highlights; like after searching
+vim.keymap.set("n", "<leader>hh", ":nohl<CR>", { noremap = true, silent = true })
+
 -- don't show tabs in lua files;
 -- the formatter enforces they're there and they're ugly and they give me anxiety
 vim.api.nvim_create_autocmd("FileType", {
