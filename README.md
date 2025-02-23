@@ -30,7 +30,7 @@ Finder → Settings → General → New Finder windows show → `~`
 Finder → Settings → Sidebar → **only** `~`, `icloud documents`, and `Applications`
 Finder → `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
 
-Open a Finder folder window and change the view type from icon to list.
+[Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png).
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
