@@ -1,4 +1,4 @@
-# Boo
+# 👻 Boo
 
 _The lazy ghost_.
 
