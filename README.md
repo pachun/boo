@@ -106,3 +106,7 @@ brew bundle
 ```sh
 lplug plugin-name
 ```
+
+## License
+
+In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
