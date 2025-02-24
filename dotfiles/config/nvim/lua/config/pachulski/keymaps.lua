@@ -98,7 +98,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fs",
 			action = function()
-				require("telescope.builtin").livegrep()
+				require("telescope.builtin").live_grep()
 			end,
 		},
 		{
