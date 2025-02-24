@@ -110,12 +110,46 @@ function use_aliases {
   alias gh='open $(git remote get-url origin | sed "s/\.git$//" | sed "s/git@github.com:/https:\/\/github.com\//")'
   alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
-  lplug() {
+  function lplug {
     if [[ -z "$1" ]]; then
       echo "Usage: lplug <filename>"
       return 1
     fi
     nvim "$HOME/.config/nvim/lua/plugins/$1.lua"
+  }
+
+  alias tls="t ls"
+
+  function tsr {
+    if [[ -z "$1" ]]; then
+      echo "Usage: sr NEW_SESSION_NAME"
+      return 1
+    fi
+
+    if [[ -z "$TMUX" ]]; then
+      echo "Not in a tmux session!"
+      return 1
+    fi
+
+    local current_session
+    current_session=$(tmux display-message -p "#S")
+
+    tmux rename-session -t "$current_session" "$1"
+    echo "Renamed session '$current_session' → '$1'"
+  }
+
+  function tat {
+    if [[ -z "$1" ]]; then
+      echo "Usage: tat SESSION_NAME"
+      return 1
+    fi
+
+    if tmux has-session -t "$1" 2>/dev/null; then
+      tmux attach-session -t "$1"
+    else
+      echo "No session named '$1' found."
+      return 1
+    fi
   }
 }
 
