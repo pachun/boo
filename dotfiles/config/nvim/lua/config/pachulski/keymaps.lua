@@ -138,6 +138,15 @@ local keymaps = {
 				helpers.run_test_in_another_tmux_pane("all")
 			end,
 		},
+		{
+			description = "Toggle git blame",
+			mode = "n",
+			command = "<leader>gb",
+			action = function()
+				vim.cmd("BlameToggle")
+				-- helpers.run_test_in_another_tmux_pane("all")
+			end,
+		},
 	},
 	lsp = {
 		{
