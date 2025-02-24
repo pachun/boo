@@ -110,3 +110,5 @@ lplug plugin-name
 ## License
 
 In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
+
+I think the only things specific to me are [my name and email in the gitconfig](https://github.com/pachun/boo/blob/main/dotfiles/gitconfig) and [my lua configuration is in a directory that has my last name](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/config/pachulski) (and is subsequently imported [in](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/config/lazy.lua#L24) [a](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/init.lua) [couple](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/helpers/init.lua) [of](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/plugins/conform.lua#L12) [places](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/plugins/nvim-lint.lua#L8)).
