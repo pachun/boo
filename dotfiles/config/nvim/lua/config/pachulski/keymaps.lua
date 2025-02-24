@@ -1,3 +1,8 @@
+local comment_api = require("Comment.api")
+local nvim_tree_api = require("nvim-tree.api")
+local telescope_builtin = require("telescope.builtin")
+local helpers = require("config.pachulski.helpers")
+
 local keymaps = {
 	basic = {
 		{
@@ -56,7 +61,7 @@ local keymaps = {
 			mode = "n",
 			command = "<C-_><C-_>",
 			action = function()
-				require("Comment.api").toggle.linewise.current()
+				comment_api.toggle.linewise.current()
 			end,
 		},
 		{
@@ -66,7 +71,7 @@ local keymaps = {
 			action = function()
 				local esc = vim.api.nvim_replace_termcodes("<Esc>", true, false, true)
 				vim.api.nvim_feedkeys(esc, "x", false)
-				require("Comment.api").toggle.linewise(vim.fn.visualmode())
+				comment_api.toggle.linewise(vim.fn.visualmode())
 			end,
 		},
 		{
@@ -74,7 +79,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ee",
 			action = function()
-				require("nvim-tree.api").tree.toggle()
+				nvim_tree_api.tree.toggle()
 			end,
 		},
 		{
@@ -82,7 +87,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ef",
 			action = function()
-				require("nvim-tree.api").tree.toggle({ find_file = true, focus = true })
+				nvim_tree_api.tree.toggle({ find_file = true, focus = true })
 			end,
 		},
 		{
@@ -90,7 +95,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ff",
 			action = function()
-				require("telescope.builtin").find_files()
+				telescope_builtin.find_files()
 			end,
 		},
 		{
@@ -98,7 +103,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fs",
 			action = function()
-				require("telescope.builtin").live_grep()
+				telescope_builtin.live_grep()
 			end,
 		},
 		{
@@ -106,7 +111,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fr",
 			action = function()
-				require("telescope.builtin").oldfiles()
+				telescope_builtin.oldfiles()
 			end,
 		},
 		{
@@ -114,7 +119,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>s",
 			action = function()
-				require("config.pachulski.helpers").run_test_in_another_tmux_pane("nearest")
+				helpers.run_test_in_another_tmux_pane("nearest")
 			end,
 		},
 		{
@@ -122,7 +127,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>t",
 			action = function()
-				require("config.pachulski.helpers").run_test_in_another_tmux_pane("file")
+				helpers.run_test_in_another_tmux_pane("file")
 			end,
 		},
 		{
@@ -130,7 +135,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>a",
 			action = function()
-				require("config.pachulski.helpers").run_test_in_another_tmux_pane("all")
+				helpers.run_test_in_another_tmux_pane("all")
 			end,
 		},
 	},
@@ -164,7 +169,7 @@ local keymaps = {
 			mode = "n",
 			command = "gd",
 			action = function()
-				require("telescope.builtin").lsp_definitions()
+				telescope_builtin.lsp_definitions()
 			end,
 		},
 		{
@@ -172,13 +177,11 @@ local keymaps = {
 			mode = "n",
 			command = "gr",
 			action = function()
-				require("telescope.builtin").lsp_references()
+				telescope_builtin.lsp_references()
 			end,
 		},
 	},
 }
-
-local helpers = require("config.pachulski.helpers")
 
 return {
 	setup = function()
