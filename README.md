@@ -35,6 +35,10 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 - `⌘ ,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
 - `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
 
+## Safari Settings
+
+- `⌘ ,` → Advanced → Show features for web developers → On
+
 ## iPhone Settings
 
 - Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
