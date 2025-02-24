@@ -1,5 +1,6 @@
 -- available lsps are listed in `:Mason` tab 2
 -- for configuration help, ask ChatGPT
+
 local language_servers = {
 	ts_ls = {
 		on_attach = function(client, _)
@@ -10,8 +11,12 @@ local language_servers = {
 	lua_ls = {
 		settings = {
 			Lua = {
+				-- Enable better lsp autocompletion
+				completion = {
+					callSnippet = "Replace",
+				},
+				-- Prevent "undefined global 'vim'" warning
 				diagnostics = {
-					-- Prevent "undefined global 'vim'" warning
 					globals = { "vim" },
 				},
 			},
