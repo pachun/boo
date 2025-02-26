@@ -144,7 +144,6 @@ local keymaps = {
 			command = "<leader>gb",
 			action = function()
 				vim.cmd("BlameToggle")
-				-- helpers.run_test_in_another_tmux_pane("all")
 			end,
 		},
 	},
