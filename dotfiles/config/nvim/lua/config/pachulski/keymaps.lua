@@ -2,6 +2,7 @@ local comment_api = require("Comment.api")
 local nvim_tree_api = require("nvim-tree.api")
 local telescope_builtin = require("telescope.builtin")
 local helpers = require("config.pachulski.helpers")
+local supermaven_api = require("supermaven-nvim.api")
 
 local keymaps = {
 	basic = {
@@ -144,6 +145,20 @@ local keymaps = {
 			command = "<leader>gb",
 			action = function()
 				vim.cmd("BlameToggle")
+			end,
+		},
+		{
+			description = "Toggle Supermaven",
+			mode = "n",
+			command = "<leader>sm",
+			action = function()
+				if supermaven_api.is_running() then
+					supermaven_api.stop()
+					print("Supermaven stopped")
+				else
+					supermaven_api.start()
+					print("Supermaven started")
+				end
 			end,
 		},
 	},
