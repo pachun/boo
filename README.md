@@ -25,6 +25,7 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. It inc
 - Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
 - Desktop & Dock → Automatically hide and show the Dock → On
 - Desktop & Dock → Desktop & Stage Manager → Click wallpaper to reveal desktop → Only in Stage Manager
+- Desktop & Dock → Desktop & Stage Manager → Show Items → On Desktop → Off
 - Control Center → Battery → Show Percentage → On
 - Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
