@@ -26,7 +26,7 @@ local keymaps = {
 		{
 			description = "Remove highlights (like after searching)",
 			mode = "n",
-			command = "<leader>rh",
+			command = "<leader>nh",
 			action = ":nohl<CR>",
 		},
 		{
