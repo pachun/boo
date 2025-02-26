@@ -18,7 +18,7 @@ local keymaps = {
 			action = "w",
 		},
 		{
-			description = "Quote with :q or :Q",
+			description = "Quit with :q or :Q",
 			mode = "c",
 			command = "Q",
 			action = "q",
