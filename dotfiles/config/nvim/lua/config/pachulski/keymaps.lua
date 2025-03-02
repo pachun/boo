@@ -34,59 +34,19 @@ local keymaps = {
 			description = "Split window vertically",
 			mode = "n",
 			command = "<leader>d|",
-			action = function()
-				local session_file = "/tmp/vim_session_" .. vim.fn.getpid() .. ".vim"
-				if vim.fn.filereadable(session_file) == 1 then
-					vim.notify("Can't split. Unzoom before splitting (<leader>d+)", vim.log.levels.WARN)
-				else
-					vim.cmd("vsplit")
-				end
-			end,
+			action = helpers.vim_splits.vsplit,
 		},
 		{
 			description = "Split window horizontally",
 			mode = "n",
 			command = "<leader>d_",
-			action = function()
-				local session_file = "/tmp/vim_session_" .. vim.fn.getpid() .. ".vim"
-				if vim.fn.filereadable(session_file) == 1 then
-					vim.notify("Can't split. Unzoom before splitting (<leader>d+)", vim.log.levels.WARN)
-				else
-					vim.cmd("split")
-				end
-			end,
+			action = helpers.vim_splits.split,
 		},
 		{
 			description = "Toggle split zoom",
 			mode = "n",
 			command = "<leader>d+",
-			action = function()
-				local session_file = "/tmp/vim_session_" .. vim.fn.getpid() .. ".vim"
-
-				if vim.fn.filereadable(session_file) == 1 then
-					local winview = vim.fn.winsaveview()
-
-					vim.cmd("silent! source " .. session_file)
-					vim.fn.delete(session_file)
-
-					-- close nvimtree buffers on session restore;
-					-- they do not restore properly
-					for _, win in ipairs(vim.api.nvim_list_wins()) do
-						local buf = vim.api.nvim_win_get_buf(win)
-						local buf_name = vim.api.nvim_buf_get_name(buf)
-						if buf_name:match("NvimTree_%d+") then
-							vim.api.nvim_win_close(win, true) -- Force close the NvimTree window
-						end
-					end
-
-					vim.fn.winrestview(winview)
-				elseif vim.fn.winnr("$") > 1 then
-					vim.cmd("mks! " .. session_file)
-					vim.cmd("wincmd o")
-				else
-					vim.notify("Can't zoom. Only one pane is open.", vim.log.levels.WARN)
-				end
-			end,
+			action = helpers.vim_splits.toggle_zoom,
 		},
 		{
 			description = "Comment line",
