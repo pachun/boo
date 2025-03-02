@@ -14,16 +14,17 @@ return {
 				["<C-l>"] = cmp.mapping.confirm(),
 				["<C-h>"] = cmp.mapping.abort(),
 			},
+			-- the order of these determines the order in the completion list
 			sources = {
-				{ name = "buffer" },
-				{ name = "path" },
-
 				-- the following source only works if nvim-lspconfig passes:
 				--
 				-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
 				--
 				-- to each language server in the language server configuration
 				{ name = "nvim_lsp" },
+
+				{ name = "buffer" },
+				{ name = "path" },
 			},
 		})
 	end,
