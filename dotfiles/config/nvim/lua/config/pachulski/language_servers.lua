@@ -2,6 +2,9 @@
 -- for configuration help, ask ChatGPT
 
 local language_servers = {
+	elixirls = {
+		cmd = { "elixir-ls" },
+	},
 	ts_ls = {
 		on_attach = function(client, _)
 			-- Disable formatting from tsserver; we use prettier
