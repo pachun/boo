@@ -25,6 +25,12 @@ local keymaps = {
 			action = "q",
 		},
 		{
+			description = "Quit with :q or :Q",
+			mode = "c",
+			command = "q",
+			action = helpers.vim_splits.close_split,
+		},
+		{
 			description = "Remove highlights (like after searching)",
 			mode = "n",
 			command = "<leader>nh",
@@ -47,6 +53,24 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>d+",
 			action = helpers.vim_splits.toggle_zoom,
+		},
+		{
+			description = "Make splits equally sized",
+			mode = "n",
+			command = "<leader>de",
+			action = "<C-w>=",
+		},
+		{
+			describe = "Move split up/left",
+			mode = "n",
+			command = "<leader>d{",
+			action = "<C-w>r",
+		},
+		{
+			describe = "Move split down/right",
+			mode = "n",
+			command = "<leader>d}",
+			action = "<C-w>R",
 		},
 		{
 			description = "Comment line",

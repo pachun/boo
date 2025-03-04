@@ -18,12 +18,33 @@ local close_nvim_tree_buffers = function()
 	end
 end
 
+local save_zoomed_buffer_and_cursor_position = function()
+	local zoomed_buffer = vim.api.nvim_get_current_buf()
+	local zoomed_buffer_name = vim.api.nvim_buf_get_name(zoomed_buffer)
+	local zoomed_buffer_cursor_position = vim.fn.winsaveview()
+	return {
+		zoomed_buffer_name = zoomed_buffer_name,
+		zoomed_buffer_cursor_position = zoomed_buffer_cursor_position,
+	}
+end
+
+local function restore_zoomed_buffer_and_cursor_position(saved_position)
+	local new_buf = vim.api.nvim_get_current_buf()
+	if
+		saved_position.zoomed_buffer_name ~= ""
+		and saved_position.zoomed_buffer_name ~= vim.api.nvim_buf_get_name(new_buf)
+	then
+		vim.cmd("edit " .. vim.fn.fnameescape(saved_position.zoomed_buffer_name))
+	end
+	vim.fn.winrestview(saved_position.zoomed_buffer_cursor_position)
+end
+
 local unzoom = function()
-	local saved_cursor_position = vim.fn.winsaveview()
+	local saved_position = save_zoomed_buffer_and_cursor_position()
 	vim.cmd("silent! source " .. session_file)
 	vim.fn.delete(session_file)
 	close_nvim_tree_buffers()
-	vim.fn.winrestview(saved_cursor_position)
+	restore_zoomed_buffer_and_cursor_position(saved_position)
 end
 
 local zoom = function()
@@ -57,8 +78,16 @@ local toggle_zoom = function()
 	end
 end
 
+local close_split = function()
+	if is_zoomed() then
+		unzoom()
+	end
+	vim.cmd("q")
+end
+
 return {
 	split = split,
 	vsplit = vsplit,
 	toggle_zoom = toggle_zoom,
+	close_split = close_split,
 }
