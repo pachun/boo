@@ -3,6 +3,7 @@ local nvim_tree_api = require("nvim-tree.api")
 local telescope_builtin = require("telescope.builtin")
 local helpers = require("config.pachulski.helpers")
 local supermaven_api = require("supermaven-nvim.api")
+local gitsigns = require("gitsigns")
 
 local keymaps = {
 	basic = {
@@ -160,6 +161,30 @@ local keymaps = {
 			command = "<leader>gb",
 			action = function()
 				vim.cmd("BlameToggle")
+			end,
+		},
+		{
+			description = "Goto next uncommitted line (wrapping)",
+			mode = "n",
+			command = "]c",
+			action = function()
+				local ok = pcall(gitsigns.nav_hunk, "next")
+				if not ok then
+					vim.cmd("normal! gg") -- Go to top
+					gitsigns.nav_hunk("next") -- Try again
+				end
+			end,
+		},
+		{
+			description = "Goto previous uncommitted line (wrapping)",
+			mode = "n",
+			command = "[c",
+			action = function()
+				local ok = pcall(gitsigns.nav_hunk, "prev")
+				if not ok then
+					vim.cmd("normal! G") -- Go to bottom
+					gitsigns.nav_hunk("prev") -- Try again
+				end
 			end,
 		},
 		{
