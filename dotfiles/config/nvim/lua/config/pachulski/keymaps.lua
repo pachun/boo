@@ -22,13 +22,13 @@ local keymaps = {
 		{
 			description = "Quit with :q or :Q",
 			mode = "c",
-			command = "Q",
+			command = "Q<CR>",
 			action = "q",
 		},
 		{
 			description = "Quit with :q or :Q",
 			mode = "c",
-			command = "q",
+			command = "q<CR>",
 			action = helpers.vim_splits.close_split,
 		},
 		{
