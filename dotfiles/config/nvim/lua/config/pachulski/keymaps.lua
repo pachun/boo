@@ -14,22 +14,18 @@ local keymaps = {
 			action = "<Esc>",
 		},
 		{
-			description = "Save with :w or :W",
-			mode = "c",
-			command = "W",
-			action = "w",
-		},
-		{
-			description = "Quit with :q or :Q",
-			mode = "c",
-			command = "Q<CR>",
-			action = "q",
-		},
-		{
-			description = "Quit with :q or :Q",
-			mode = "c",
-			command = "q<CR>",
+			description = "Quit shortcut",
+			mode = "n",
+			command = "<leader>q",
 			action = helpers.vim_splits.close_split,
+		},
+		{
+			description = "Save shortcut",
+			mode = "n",
+			command = "<leader>w",
+			action = function()
+				vim.cmd("w")
+			end,
 		},
 		{
 			description = "Remove highlights (like after searching)",
