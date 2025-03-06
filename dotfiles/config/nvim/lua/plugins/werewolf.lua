@@ -6,7 +6,8 @@ return {
 				if theme == "Dark" then
 					vim.cmd.colorscheme("catppuccin-frappe")
 				else
-					vim.cmd.colorscheme("catppuccin-latte")
+					vim.o.background = "light"
+					vim.cmd.colorscheme("gruvbox")
 				end
 			end,
 		},

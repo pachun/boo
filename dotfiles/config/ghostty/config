@@ -24,7 +24,7 @@ clipboard-write = allow
 
 font-size = 16
 font-family = MonoLisa
-theme = dark:catppuccin-frappe,light:catppuccin-latte
+theme = dark:catppuccin-frappe,light:gruvboxLight
 cursor-style = block
 cursor-style-blink = false
 mouse-hide-while-typing = true
