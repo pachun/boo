@@ -10,8 +10,8 @@ return {
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
 
-			local language_servers = require("config.pachulski.language_servers")
-			local autocmds = require("config.pachulski.autocmds")
+			local language_servers = require("config.personal.language_servers")
+			local autocmds = require("config.personal.autocmds")
 
 			-- install lsps
 			mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(language_servers) })

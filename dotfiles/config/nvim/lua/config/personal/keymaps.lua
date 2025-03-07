@@ -1,7 +1,7 @@
 local comment_api = require("Comment.api")
 local nvim_tree_api = require("nvim-tree.api")
 local telescope_builtin = require("telescope.builtin")
-local helpers = require("config.pachulski.helpers")
+local helpers = require("config.personal.helpers")
 local supermaven_api = require("supermaven-nvim.api")
 local gitsigns = require("gitsigns")
 

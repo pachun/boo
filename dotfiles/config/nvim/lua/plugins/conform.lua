@@ -9,8 +9,8 @@ return {
 			local conform = require("conform")
 			local mason_tool_installer = require("mason-tool-installer")
 
-			local helpers = require("config.pachulski.helpers")
-			local formatters = require("config.pachulski.formatters")
+			local helpers = require("config.personal.helpers")
+			local formatters = require("config.personal.formatters")
 
 			mason_tool_installer.setup({
 				ensure_installed = vim.tbl_keys(formatters),

@@ -2,7 +2,7 @@
 
 THEME_FILE="$HOME/.config/theme"
 GHOSTTY_CONFIG="$HOME/.config/ghostty/config"
-NEOVIM_LUA="$HOME/.config/nvim/lua/config/pachulski/theme.lua"
+NEOVIM_LUA="$HOME/.config/nvim/lua/config/personal/theme.lua"
 
 theme() {
   awk -F= -v section="[$1]" -v key="$2" '

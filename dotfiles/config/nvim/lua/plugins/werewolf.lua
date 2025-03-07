@@ -1,4 +1,4 @@
-local theme = require("config.pachulski.theme")
+local theme = require("config.personal.theme")
 
 return {
 	"sheharyarn/werewolf.nvim",

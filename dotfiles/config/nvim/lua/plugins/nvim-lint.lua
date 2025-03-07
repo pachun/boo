@@ -5,8 +5,8 @@ return {
 		local mason_nvim_lint = require("mason-nvim-lint")
 		local lint = require("lint")
 
-		local helpers = require("config.pachulski.helpers")
-		local linters = require("config.pachulski.linters")
+		local helpers = require("config.personal.helpers")
+		local linters = require("config.personal.linters")
 
 		mason_nvim_lint.setup({ ensure_installed = vim.tbl_keys(linters) })
 

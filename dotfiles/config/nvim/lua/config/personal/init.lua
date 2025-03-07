@@ -1,0 +1,5 @@
+require("config.personal.opts").setup()
+require("config.personal.autocmds").setup()
+require("config.personal.diagnostics").setup()
+require("config.personal.keymaps").setup()
+require("config.personal.vim_test").setup()

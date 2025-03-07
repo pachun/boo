@@ -1,4 +1,4 @@
-local helpers = require("config.pachulski.helpers")
+local helpers = require("config.personal.helpers")
 
 return {
 	setup = function()

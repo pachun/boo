@@ -3,7 +3,7 @@ return {
 	build = ":TSUpdate",
 	config = function()
 		local treesitter_config = require("nvim-treesitter.configs")
-		local syntax_highlighters = require("config.pachulski.syntax_highlighters")
+		local syntax_highlighters = require("config.personal.syntax_highlighters")
 
 		treesitter_config.setup({
 			highlight = { enable = true },
