@@ -84,13 +84,13 @@ brew services start postgresql@17
 - [Aliases](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L98)
 - [Homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile) (`brew bundle` after changing)
 
-## Adding a dotfile
+### Adding a dotfile
 
 1. [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix)
 1. [Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
 1. Run `./dotfiles.sh` to symlink it to ~/.dotfile_name
 
-## Adding/Editing Lazy.nvim plugins
+### Adding/Editing Lazy.nvim plugins
 
 [You can view existing plugins here](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
 
