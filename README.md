@@ -66,18 +66,33 @@ After that finishes, start postgres.
 brew services start postgresql@17
 ```
 
-## Making changes
+## Usage
 
-- [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore) and run `./dotfiles.sh`
-- [Add a Homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
-- [Add or edit a Neovim lazy.nvim plugin with `lplug plugin-name` (e.g. `lplug telescope`)](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L113)
-- [Edit your Ghostty & Neovim themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
-- [Add or edit a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
-- [Add or edit a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
-- [Add or edit a Neovim syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
-- [Add or edit a Neovim language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
-- [Add or edit a Neovim formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
-- [Add or edit a Neovim linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
+- [Themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
+- [Keymaps](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
+- [Language Servers](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
+- [Syntax Highlighters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
+- [Formatters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
+- [Linters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
+- [Options](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
+- [Aliases](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L98)
+- [Homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile) (`brew bundle` after changing)
+
+## Adding a dotfile
+
+1. [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix)
+1. [Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
+1. Run `./dotfiles.sh` to symlink it to ~/.dotfile_name
+
+## Adding/Editing a Lazy.nvim plugins
+
+[You can view existing plugins here](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
+
+You can add or edit a plugin with [`lplug plugin-name`](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L113). For example:
+
+```sh
+lplug telescope
+```
 
 ## License
 
