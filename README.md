@@ -66,7 +66,7 @@ brew services start postgresql@17
 
 ## Making changes
 
-- [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore), and run `./dotfiles`
+- [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore), and run `./dotfiles.sh`
   - Note: Since dotfiles are symlinked, you only need the following to add _new_ dotfiles. Existing dotfiles will "just work"
 - [Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
 - [Add a keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
