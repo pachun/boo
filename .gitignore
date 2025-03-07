@@ -10,3 +10,5 @@ dotfiles/config/*
 !dotfiles/config/ghostty
 !dotfiles/config/lazygit
 !dotfiles/config/nvim
+!dotfiles/config/bin
+!dotfiles/config/theme

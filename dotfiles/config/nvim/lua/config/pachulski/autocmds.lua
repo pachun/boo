@@ -41,11 +41,26 @@ local function syntax_highlight_brewfiles()
 	})
 end
 
+local function update_ghostty_and_nvim_themes()
+	vim.api.nvim_create_autocmd("BufWritePost", {
+		callback = function(event)
+			local real_path = vim.loop.fs_realpath(vim.fn.expand(event.match))
+			local expected_path = vim.loop.fs_realpath(vim.fn.expand("~/.config/theme"))
+
+			if real_path and expected_path and real_path == expected_path then
+				vim.fn.jobstart("~/.config/bin/update-theme.sh", { detach = true })
+				vim.notify("Theme updated; Restart Ghostty to apply terminal changes.")
+			end
+		end,
+	})
+end
+
 return {
 	setup = function()
 		hide_tabs_icons_in_lua_files()
 		rename_tmux_windows_to_vim_directory_name()
 		syntax_highlight_brewfiles()
+		update_ghostty_and_nvim_themes()
 	end,
 	setup_lsp_keymaps = setup_lsp_keymaps,
 }

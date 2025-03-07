@@ -69,6 +69,7 @@ brew services start postgresql@17
 - [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore) and run `./dotfiles.sh`
 - [Add a Homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
 - Add or edit a Neovim lazy.nvim plugin ([existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)): `lplug plugin-name` (e.g. `lplug telescope`)
+- [Change your Ghostty & Neovim themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
 - [Add a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
 - [Add a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
 - [Add a Neovim syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
