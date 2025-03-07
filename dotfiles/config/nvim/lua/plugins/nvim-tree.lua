@@ -20,6 +20,10 @@ return {
 				-- and mac generated dotfiles (.DS_Store)
 				custom = { "*.coverdata", ".DS_Store" },
 			},
+			-- don't show git statuses by files/dirs in nvim-tree
+			git = {
+				enable = false,
+			},
 		})
 	end,
 }
