@@ -64,55 +64,18 @@ Wait for that to finish and then start postgres.
 brew services start postgresql@17
 ```
 
-## Add a dotfile
+## Making changes
 
-Since dotfiles are symlinked, you only need the following to add _new_ dotfiles. Existing dotfiles will "just work".
-
-[Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
-
-```sh
-./dotfiles.sh
-```
-
-## Add a homebrew app
-
-[Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile)
-
-```sh
-brew bundle
-```
-
-## Add a keymap
-
-[Add a keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
-
-## Add an option
-
-[Add an option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
-
-## Add a Syntax highlighter
-
-[Add a syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
-
-## Add a language server
-
-[Add a language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
-
-## Add a formatter
-
-[Add a formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
-
-## Add a linter
-
-[Add a linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
-
-## Add/Edit a lazy plugin
-
-[Existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)
-
-```sh
-lplug plugin-name
-```
+- [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore), and run `./dotfiles` to symlink the dotfile to `~`
+  - Note: Since dotfiles are symlinked, you only need the following to add _new_ dotfiles. Existing dotfiles will "just work"
+- [Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
+- [Add a keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
+- [Add an option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
+- [Add a Syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
+- [Add a language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
+- [Add a formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
+- [Add a linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
+- Add or Edit a lazy plugin ([existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)): `lplug plugin-name`
 
 ## License
 
