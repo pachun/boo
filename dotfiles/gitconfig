@@ -1,13 +1,10 @@
-# use my name and email when committing
 [user]
   name = Nicholas Pachulski
   email = nick@pachulski.me
 
-# initialize new repositories with a main branch
 [init]
   defaultBranch = main
 
-# format `git log` in a more readable way
 [format]
   pretty = format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset
 
