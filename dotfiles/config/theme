@@ -8,14 +8,11 @@
 # set light and dark to the same theme, below.
 
 # ghostty themes can be listed with `ghostty +list-themes`
-
 [ghostty]
 dark=catppuccin-frappe
 light=gruvboxLight
 
 # available nvim themes are in ~/.config/nvim/lua/plugins/themes.lua
-# you should add themes that you want to use here in that file
-
 [nvim]
 dark_theme=catppuccin-frappe
 dark_style=dark
