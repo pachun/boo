@@ -70,14 +70,14 @@ brew services start postgresql@17
 
 - [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore) and run `./dotfiles.sh`
 - [Add a Homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
-- Add or edit a Neovim lazy.nvim plugin ([existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)): `lplug plugin-name` (e.g. `lplug telescope`)
-- [Change your Ghostty & Neovim themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
-- [Add a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
-- [Add a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
-- [Add a Neovim syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
-- [Add a Neovim language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
-- [Add a Neovim formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
-- [Add a Neovim linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
+- [Add or edit a Neovim lazy.nvim plugin with `lplug plugin-name` (e.g. `lplug telescope`)](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L113)
+- [Edit your Ghostty & Neovim themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
+- [Add or edit a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
+- [Add or edit a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
+- [Add or edit a Neovim syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
+- [Add or edit a Neovim language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
+- [Add or edit a Neovim formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
+- [Add or edit a Neovim linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
 
 ## License
 
