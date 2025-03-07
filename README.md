@@ -85,7 +85,7 @@ I think the only things specific to me are [my name and email in the gitconfig](
 
 ## Todo
 
-I'd like to imagine someone else might use these dotfiles. I've put a lot of effort into them. To that end, I'd like to:
+In an effort to make the dotfiles less specific to me, I'd like to:
 
 - remove the `.pachulski` lua imports and somehow make that import `$HOME` instead
 - remove the settings specific to me inside of [`gitconfig`](https://github.com/pachun/boo/blob/main/dotfiles/gitconfig) and somehow make those dynamic as well
