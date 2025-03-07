@@ -82,11 +82,7 @@ local close_split = function()
 	if is_zoomed() then
 		unzoom()
 	end
-	if vim.fn.winnr("$") > 1 then
-		vim.cmd("close")
-	else
-		vim.cmd("q")
-	end
+	vim.cmd("q")
 end
 
 return {
