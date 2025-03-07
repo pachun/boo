@@ -32,10 +32,20 @@ local function setup_lsp_keymaps()
 	})
 end
 
+local function syntax_highlight_brewfiles()
+	vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+		pattern = "Brewfile",
+		callback = function()
+			vim.bo.filetype = "ruby"
+		end,
+	})
+end
+
 return {
 	setup = function()
 		hide_tabs_icons_in_lua_files()
 		rename_tmux_windows_to_vim_directory_name()
+		syntax_highlight_brewfiles()
 	end,
 	setup_lsp_keymaps = setup_lsp_keymaps,
 }
