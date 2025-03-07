@@ -58,7 +58,9 @@ Install [homebrew](https://brew.sh/), install [applications](https://github.com/
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
 
-Wait for that to finish and then start postgres.
+You'll eventually be prompted to enter the name and email you want to be shown on your git commits.
+
+After that finishes, start postgres.
 
 ```sh
 brew services start postgresql@17
@@ -80,11 +82,3 @@ brew services start postgresql@17
 ## License
 
 In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
-
-I think the only things specific to me are [my name and email in the gitconfig](https://github.com/pachun/boo/blob/main/dotfiles/gitconfig) and [my lua configuration is in a directory that has my last name](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/config/personal) (and is subsequently imported [in](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/config/lazy.lua#L24) [a](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/init.lua) [couple](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/helpers/init.lua) [of](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/plugins/conform.lua#L12) [places](https://github.com/pachun/boo/blob/76c5a444a28d28a1cc4f7743abd9e9e43470c678/dotfiles/config/nvim/lua/plugins/nvim-lint.lua#L8)).
-
-## Todo
-
-In an effort to make the dotfiles less specific to me, I'd like to:
-
-- remove the settings specific to me inside of [`gitconfig`](https://github.com/pachun/boo/blob/main/dotfiles/gitconfig) and somehow make those dynamic as well
