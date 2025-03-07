@@ -6,6 +6,12 @@ _The lazy ghost_.
 
 Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes manual and automated steps to configure my system settings, install my apps and setup my terminal ([Ghostty](https://ghostty.org)). My dotfiles are also installed, which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
 
+# Installation
+
+Xcode takes a while to install, and is required to [install the dotfiles](#after-xcode-is-installed). With the interest of keeping your installation experience unblocked, the Xcode install is mentioned first, followed by all manual setup, followed by the dotfile installation.
+
+Otherwise, order of installations doesn't matter.
+
 [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 
 [Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
