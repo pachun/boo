@@ -69,12 +69,12 @@ brew services start postgresql@17
 - [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix), [remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore), and run `./dotfiles.sh`
   - Since dotfiles are symlinked, you only need this to add _new_ dotfiles
 - [Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
-- [Add a keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
-- [Add an option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
-- [Add a Syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
-- [Add a language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
-- [Add a formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
-- [Add a linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
+- [Add a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
+- [Add a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
+- [Add a Neovim Syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
+- [Add a Neovim language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
+- [Add a Neovim formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
+- [Add a Neovim linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
 - Add or Edit a lazy plugin ([existing plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)): `lplug plugin-name`
 
 ## License
