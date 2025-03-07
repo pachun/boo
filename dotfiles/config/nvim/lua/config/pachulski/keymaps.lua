@@ -132,7 +132,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>s",
 			action = function()
-				helpers.run_test_in_another_tmux_pane("nearest")
+				vim.cmd("TestNearest")
 			end,
 		},
 		{
@@ -140,7 +140,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>t",
 			action = function()
-				helpers.run_test_in_another_tmux_pane("file")
+				vim.cmd("TestFile")
 			end,
 		},
 		{
@@ -148,7 +148,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>a",
 			action = function()
-				helpers.run_test_in_another_tmux_pane("all")
+				vim.cmd("TestSuite")
 			end,
 		},
 		{
@@ -160,26 +160,26 @@ local keymaps = {
 			end,
 		},
 		{
-			description = "Goto next uncommitted line (wrapping)",
+			description = "Goto next uncommitted line",
 			mode = "n",
 			command = "]c",
 			action = function()
 				local ok = pcall(gitsigns.nav_hunk, "next")
 				if not ok then
-					vim.cmd("normal! gg") -- Go to top
-					gitsigns.nav_hunk("next") -- Try again
+					vim.cmd("normal! gg")
+					gitsigns.nav_hunk("next")
 				end
 			end,
 		},
 		{
-			description = "Goto previous uncommitted line (wrapping)",
+			description = "Goto previous uncommitted line",
 			mode = "n",
 			command = "[c",
 			action = function()
 				local ok = pcall(gitsigns.nav_hunk, "prev")
 				if not ok then
-					vim.cmd("normal! G") -- Go to bottom
-					gitsigns.nav_hunk("prev") -- Try again
+					vim.cmd("normal! G")
+					gitsigns.nav_hunk("prev")
 				end
 			end,
 		},
