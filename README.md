@@ -2,6 +2,8 @@
 
 _The lazy ghost_.
 
+![Ghostty Screenshot](assets/ghostty-screenshot.png)
+
 Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes manual and automated steps to configure my system settings, install my apps and setup my terminal ([Ghostty](https://ghostty.org)). My dotfiles are also installed, which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
 
 [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
