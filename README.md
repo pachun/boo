@@ -97,3 +97,7 @@ lplug telescope
 ## License
 
 In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
+
+## To Do
+
+- Keep nvim-tree title at the top of the file explorer & retake readme screenshot
