@@ -26,7 +26,7 @@ Otherwise, order of installations doesn't matter.
 
 [Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png)
 
-## System Settings
+### System Settings
 
 - Trackpad → Tracking Speed → Move the slider all the way to the right
 - Trackpad → Tap to Click → On
@@ -37,26 +37,26 @@ Otherwise, order of installations doesn't matter.
 - Control Center → Battery → Show Percentage → On
 - Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
-## Finder Settings
+### Finder Settings
 
 - Remove all but Finder and Trash from the dock.
 - `⌘ ,` → General → New Finder windows show → `~`
 - `⌘ ,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
 - `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
 
-## Safari Settings
+### Safari Settings
 
 - `⌘ ,` → Advanced → Show features for web developers → On
 
-## iPhone Settings
+### iPhone Settings
 
 - Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
 
-## GitHub Setup
+### GitHub Setup
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
-## After Xcode is installed
+### After Xcode is installed
 
 Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/boo/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) by running:
 
