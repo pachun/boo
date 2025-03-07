@@ -71,7 +71,7 @@ brew services start postgresql@17
 - [Add a homebrew app](https://github.com/pachun/boo/blob/main/Brewfile) and run `brew bundle`
 - [Add a Neovim keymap](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/keymaps.lua)
 - [Add a Neovim option](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/opts.lua)
-- [Add a Neovim Syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
+- [Add a Neovim syntax highlighter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/syntax_highlighters.lua)
 - [Add a Neovim language server](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/language_servers.lua)
 - [Add a Neovim formatter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/formatters.lua)
 - [Add a Neovim linter](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/pachulski/linters.lua)
