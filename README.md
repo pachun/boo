@@ -84,7 +84,7 @@ brew services start postgresql@17
 1. [Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
 1. Run `./dotfiles.sh` to symlink it to ~/.dotfile_name
 
-## Adding/Editing a Lazy.nvim plugins
+## Adding/Editing Lazy.nvim plugins
 
 [You can view existing plugins here](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
 
