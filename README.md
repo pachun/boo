@@ -2,7 +2,11 @@
 
 _The lazy ghost_.
 
-![Ghostty Screenshot](assets/ghostty-screenshot.png)
+<picture>
+  <source srcset="assets/screenshot-dark.png" media="(prefers-color-scheme: dark)">
+  <source srcset="assets/screenshot-light.png" media="(prefers-color-scheme: light)">
+  <img src="screenshot-light.png" alt="Screenshot">
+</picture>
 
 Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes manual and automated steps to configure my system settings, install my apps and setup my terminal ([Ghostty](https://ghostty.org)). My dotfiles are also installed, which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
 
