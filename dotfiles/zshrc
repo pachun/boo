@@ -178,6 +178,10 @@ function tell_lazygit_to_use_home_folder_config {
   export XDG_CONFIG_HOME="$HOME/.config"
 }
 
+function add_postgres_to_path {
+  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+}
+
 use_vim_mode_on_cli
 use_jj_instead_of_escape
 enable_colorized_output_for_commands_which_support_it_like_ls
@@ -189,6 +193,7 @@ setup_asdf
 enable_asdf_autocompletion
 tell_lazygit_to_use_home_folder_config
 use_direnv
+add_postgres_to_path
 
 # keep at end
 enable_zsh_syntax_highlighting
