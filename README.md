@@ -17,10 +17,7 @@ Boo is a set of steps that I use to set up new or re-imaged Mac machines. I use 
 - [which iPhone Settings I prefer](#iphone-settings)
 - [how to connect my GitHub account to a new machine](#github-setup)
 
-I also use it to automate installing:
-
-- [my homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile)
-- [my dotfiles](https://github.com/pachun/boo/blob/main/dotfiles).
+[I also use a script in here](#dotfiles) to install [my dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) and [homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile).
 
 ## Install
 
