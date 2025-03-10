@@ -8,13 +8,25 @@ _The lazy ghost_.
   <img src="screenshot-light.png" alt="Screenshot">
 </picture>
 
-Boo is a set of steps that I use to set up new or re-imaged Mac machines. It includes manual and automated steps to configure my system settings, install my apps and setup my terminal ([Ghostty](https://ghostty.org)). My dotfiles are also installed, which mainly configure [Neovim](https://neovim.io) and some [Lazy.nvim](https://lazy.folke.io/) plugins.
+Boo is a set of steps that I use to set up new or re-imaged Mac machines. I use it to remind myself:
 
-# Installation
+- [which App Store apps I use](#apps)
+- [which System Settings I prefer](#system-settings)
+- [which Finder Settings I prefer](#finder-settings)
+- [which Safari Settings I prefer](#safari-settings)
+- [which iPhone Settings I prefer](#iphone-settings)
+- [how to connect my GitHub account to a new machine](#github-setup)
 
-Xcode takes a while to install, and is required to [install the dotfiles](#after-xcode-is-installed). With the interest of keeping your installation experience unblocked, the Xcode install is mentioned first, followed by all manual setup, followed by the dotfile installation.
+I also use it to automate installing:
 
-Otherwise, order of installations doesn't matter.
+- [my homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile)
+- [my dotfiles](https://github.com/pachun/boo/blob/main/dotfiles).
+
+## Install
+
+Xcode takes a while to install, and is required to [install the dotfiles](#dotfiles). Otherwise, order of installations doesn't matter.
+
+### Apps
 
 [Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
 
@@ -60,9 +72,9 @@ Otherwise, order of installations doesn't matter.
 
 [Generate an SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) and [add it to GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account).
 
-### After Xcode is installed
+### Dotfiles
 
-Install [homebrew](https://brew.sh/), install [applications](https://github.com/pachun/boo/blob/main/Brewfile), and symlink [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) by running:
+After Xcode is installed, run [the following](https://github.com/pachun/boo/blob/main/install.sh):
 
 ```sh
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
