@@ -5,10 +5,10 @@ return {
 		vim.g["test#custom_transformations"] = {
 			quote_paths = function(cmd)
 				if type(cmd) == "string" then
-					return cmd:gsub("(%S+%.test%.tsx)", '"%1"')
+					return cmd:gsub("(%S+%.test%.ts[x]?)", '"%1"')
 				elseif type(cmd) == "table" then
 					for i, part in ipairs(cmd) do
-						cmd[i] = part:gsub("(%S+%.test%.tsx)", '"%1"')
+						cmd[i] = part:gsub("(%S+%.test%.ts[x]?)", '"%1"')
 					end
 					return cmd
 				end
