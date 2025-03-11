@@ -20,7 +20,7 @@ Boo is a list of things that I install and configure on new or re-imaged Mac mac
 
 ## Install
 
-Xcode takes a while to install, and is required to [install the dotfiles](#dotfiles).
+Xcode takes a while to install and is required to [install the dotfiles](#dotfiles).
 
 ### Apps
 
@@ -43,7 +43,7 @@ Xcode takes a while to install, and is required to [install the dotfiles](#dotfi
 
 ### Finder Settings
 
-- Remove all but Finder and Trash from the dock.
+- Remove all but Finder and Trash from the dock
 - `⌘ ,` → General → New Finder windows show → `~`
 - `⌘ ,` → Sidebar → **only** `~`, `icloud documents`, and `Applications`
 - `⌘ n` → Click "View as List" → `⌘ j` → Always open in list view → On → Use as Defaults
