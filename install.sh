@@ -1,3 +1,11 @@
+function install_monolisa_font {
+  cp $PWD/assets/MonoLisa/*.ttf $HOME/Library/Fonts/
+}
+
+function set_desktop_wallpaper {
+  osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'$PWD/assets/less\ is\ less.png'"'
+}
+
 function install_homebrew {
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   echo >> ~/.zprofile
@@ -54,6 +62,8 @@ function start_postgres {
   brew services start postgresql@17
 }
 
+install_monolisa_font
+set_desktop_wallpaper
 install_homebrew
 install_homebrew_apps
 enable_asdf_autocompletions

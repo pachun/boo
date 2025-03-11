@@ -8,7 +8,7 @@ _The lazy ghost_.
   <img src="screenshot-light.png" alt="Screenshot">
 </picture>
 
-Boo is a set of steps that I use to set up new or re-imaged Mac machines.
+Boo is a list of things that I install and configure on new or re-imaged Mac machines.
 
 - [Apps](#apps)
 - [System Settings](#system-settings)
@@ -24,19 +24,11 @@ Xcode takes a while to install, and is required to [install the dotfiles](#dotfi
 
 ### Apps
 
-[Install Xcode](https://apps.apple.com/us/app/xcode/id497799835)
-
-[Install Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
-
-[Install Bear](https://apps.apple.com/us/app/bear-markdown-notes/id1091189122)
-
-[Install ColorSlurp](https://apps.apple.com/us/app/colorslurp/id1287239339)
-
-[Install Affinity Photo](https://apps.apple.com/us/app/affinity-photo-2-image-editor/id1616822987)
-
-[Install the MonoLisa font](https://github.com/pachun/boo/tree/main/assets/MonoLisa)
-
-[Set your desktop wallpaper](https://github.com/pachun/boo/blob/main/assets/less%20is%20less.png)
+- [Xcode](https://apps.apple.com/us/app/xcode/id497799835)
+- [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704)
+- [Bear](https://apps.apple.com/us/app/bear-markdown-notes/id1091189122)
+- [ColorSlurp](https://apps.apple.com/us/app/colorslurp/id1287239339)
+- [Affinity Photo](https://apps.apple.com/us/app/affinity-photo-2-image-editor/id1616822987)
 
 ### System Settings
 
@@ -78,23 +70,15 @@ mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./
 
 ## Usage
 
-[Themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
-
-[Keymaps](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
-
-[Language Servers](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
-
-[Syntax Highlighters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
-
-[Formatters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
-
-[Linters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
-
-[Options](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
-
-[Aliases](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L98)
-
-[Homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile) (`brew bundle` after changing)
+- [Themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
+- [Keymaps](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/keymaps.lua)
+- [Language Servers](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/language_servers.lua)
+- [Syntax Highlighters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/syntax_highlighters.lua)
+- [Formatters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/formatters.lua)
+- [Linters](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/linters.lua)
+- [Options](https://github.com/pachun/boo/blob/main/dotfiles/config/nvim/lua/config/personal/opts.lua)
+- [Aliases](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L98)
+- [Homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile)
 
 ### Adding a dotfile
 
@@ -114,8 +98,9 @@ lplug telescope
 
 ## License
 
-In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
+Apps and dotfiles are kind of personal. However, in case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE). While the configuration and applications installed by [boo](https://github.com/pachun/boo) are specific to my tastes, nothing about the installation process is coupled to me (unless I missed something). I've tried to keep installation generic.
 
 ## To Do
 
 - Keep nvim-tree title at the top of the file explorer & retake readme screenshot
+- I'd really, _really_ love to automate the whole installation process, but there are still a lot of manual steps. I haven't found a way that I'm happy with, for instance, to automate setting the system preferences. If you know of a way, please either [email me](mailto:nick@pachulski.me) or [submit a PR](https://github.com/pachun/boo/pulls).
