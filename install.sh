@@ -19,3 +19,4 @@ install_homebrew
 install_homebrew_apps
 enable_asdf_autocompletions
 ./dotfiles.sh
+asdf plugin add yarn
