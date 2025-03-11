@@ -10,18 +10,17 @@ _The lazy ghost_.
 
 Boo is a set of steps that I use to set up new or re-imaged Mac machines.
 
-- [App Store apps I use](#apps)
-- [System Settings I prefer](#system-settings)
-- [Finder Settings I prefer](#finder-settings)
-- [Safari Settings I prefer](#safari-settings)
-- [iPhone Settings I prefer](#iphone-settings)
-- [things I need to do to connect a new machine to my GitHub account](#github-setup)
-
-[I also use a script](#dotfiles) to install my [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) and [homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile).
+- [Apps](#apps)
+- [System Settings](#system-settings)
+- [Finder Settings](#finder-settings)
+- [Safari Settings](#safari-settings)
+- [iPhone Settings](#iphone-settings)
+- [GitHub Setup](#github-setup)
+- [dotfiles](#dotfiles)
 
 ## Install
 
-Xcode takes a while to install, and is required to [install the dotfiles](#dotfiles). Otherwise, order of installations doesn't matter.
+Xcode takes a while to install, and is required to [install the dotfiles](#dotfiles).
 
 ### Apps
 
