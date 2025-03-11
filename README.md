@@ -8,16 +8,16 @@ _The lazy ghost_.
   <img src="screenshot-light.png" alt="Screenshot">
 </picture>
 
-Boo is a set of steps that I use to set up new or re-imaged Mac machines. I use it to remind myself:
+Boo is a set of steps that I use to set up new or re-imaged Mac machines.
 
-- [which App Store apps I use](#apps)
-- [which System Settings I prefer](#system-settings)
-- [which Finder Settings I prefer](#finder-settings)
-- [which Safari Settings I prefer](#safari-settings)
-- [which iPhone Settings I prefer](#iphone-settings)
-- [how to connect my GitHub account to a new machine](#github-setup)
+- [App Store apps I use](#apps)
+- [System Settings I prefer](#system-settings)
+- [Finder Settings I prefer](#finder-settings)
+- [Safari Settings I prefer](#safari-settings)
+- [iPhone Settings I prefer](#iphone-settings)
+- [things I need to do to connect a new machine to my GitHub account](#github-setup)
 
-[I also use a script in here](#dotfiles) to install [my dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) and [homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile).
+[I also use a script](#dotfiles) to install my [dotfiles](https://github.com/pachun/boo/blob/main/dotfiles) and [homebrew apps](https://github.com/pachun/boo/blob/main/Brewfile).
 
 ## Install
 
@@ -77,14 +77,6 @@ After Xcode is installed, run [the following](https://github.com/pachun/boo/blob
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
 
-You'll eventually be prompted to enter the name and email you want to be shown on your git commits.
-
-After that finishes, start postgres.
-
-```sh
-brew services start postgresql@17
-```
-
 ## Usage
 
 [Themes](https://github.com/pachun/boo/blob/main/dotfiles/config/theme)
@@ -109,13 +101,13 @@ brew services start postgresql@17
 
 1. [Add a dotfile](https://github.com/pachun/boo/tree/main/dotfiles) (without the dot prefix)
 1. [Remove your dotfile from gitignore](https://github.com/pachun/boo/blob/main/.gitignore)
-1. Run `./dotfiles.sh` to symlink it to ~/.dotfile_name
+1. Symlink the dotfile: `ln -sf "$PWD/dotfiles/my_dotfile" "$HOME/.my_dotfile"`
 
 ### Adding/Editing Lazy.nvim plugins
 
-[You can view existing plugins here](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
+[Installed plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
 
-You can add or edit a plugin with [`lplug plugin-name`](https://github.com/pachun/boo/blob/146b85047116fd85938b64593851bb72fd8b7e52/dotfiles/zshrc#L113). For example:
+Add or edit a plugin with `lplug plugin-name`. For example:
 
 ```sh
 lplug telescope
