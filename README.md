@@ -16,7 +16,7 @@ Boo is a list of things that I install and configure on new or re-imaged Mac mac
 - [Safari Settings](#safari-settings)
 - [iPhone Settings](#iphone-settings)
 - [GitHub Setup](#github-setup)
-- [dotfiles](#dotfiles)
+- [Dotfiles](#dotfiles)
 
 ## Install
 
@@ -62,7 +62,8 @@ Xcode takes a while to install, and is required to [install the dotfiles](#dotfi
 
 ### Dotfiles
 
-After Xcode is installed, run [the following](https://github.com/pachun/boo/blob/main/install.sh):
+- [Xcode must be installed](https://apps.apple.com/us/app/xcode/id497799835)
+- [Your SSH key must be added to GitHub](#github-setup)
 
 ```sh
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
