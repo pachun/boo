@@ -1,5 +1,4 @@
 dotfiles/*
-!dotfiles/gitconfig
 !dotfiles/gitignore
 !dotfiles/hushlogin
 !dotfiles/tmux.conf

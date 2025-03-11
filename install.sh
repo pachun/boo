@@ -19,8 +19,21 @@ function create_gitconfig_dotfile {
   read -p "What name should show on your git commits? " git_name
   read -p "What email should show on your git commits? " git_email
 
-  sed -i '' "s/{{GIT_NAME}}/$git_name/" "$PWD/dotfiles/gitconfig"
-  sed -i '' "s/{{GIT_EMAIL}}/$git_email/" "$PWD/dotfiles/gitconfig"
+  cat <<EOF > "$PWD/dotfiles/gitconfig"
+[user]
+  name = $git_name
+  email = $git_email
+
+[init]
+  defaultBranch = main
+
+[format]
+  pretty = format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset
+
+[core]
+  editor = nvim
+  excludesFile = ~/.gitignore
+EOF
 }
 
 function symlink_dotfiles {
