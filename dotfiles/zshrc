@@ -99,7 +99,6 @@ function use_aliases {
   alias e=exit
   alias c=clear
   alias vim=nvim
-  alias t=tmux
   alias x=gitx
   alias p='git push origin $(git rev-parse --abbrev-ref HEAD)'
   alias gs="git status"
@@ -110,6 +109,14 @@ function use_aliases {
   alias gh='open $(git remote get-url origin | sed "s/\.git$//" | sed "s/git@github.com:/https:\/\/github.com\//")'
   alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
+  function t() {
+    if [[ -n "$1" ]]; then
+      tmux new-session -s "$1"
+    else
+      tmux
+    fi
+  }
+
   function lplug {
     if [[ -z "$1" ]]; then
       echo "Usage: lplug <filename>"
@@ -118,7 +125,7 @@ function use_aliases {
     nvim "$HOME/.config/nvim/lua/plugins/$1.lua"
   }
 
-  alias tls="t ls"
+  alias tls="tmux ls"
 
   function tsr {
     if [[ -z "$1" ]]; then
