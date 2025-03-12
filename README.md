@@ -89,7 +89,7 @@ mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./
 
 ### Adding/Editing Lazy.nvim plugins
 
-[Installed plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins).
+[Installed plugins](https://github.com/pachun/boo/tree/main/dotfiles/config/nvim/lua/plugins)
 
 Add or edit a plugin with `lplug plugin-name`. For example:
 
@@ -99,9 +99,11 @@ lplug telescope
 
 ## License
 
-Apps and dotfiles are kind of personal. However, in case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE). While the configuration and applications installed by [boo](https://github.com/pachun/boo) are specific to my tastes, nothing about the installation process is coupled to me (unless I missed something). I've tried to keep installation generic.
+In case anyone comes across this and likes it enough to want it, [please take whatever you want](https://github.com/pachun/boo/blob/main/LICENSE).
+
+Apps and dotfiles are personal, but the installation is not. Everything is tailored to my preferences but remains installer-agnostic.
 
 ## To Do
 
-- Keep nvim-tree title at the top of the file explorer & retake readme screenshot
-- I'd really, _really_ love to automate the whole installation process, but there are still a lot of manual steps. I haven't found a way that I'm happy with, for instance, to automate setting the system preferences. If you know of a way, please either [email me](mailto:nick@pachulski.me) or [submit a PR](https://github.com/pachun/boo/pulls).
+- Keep nvim-tree title at the top of the file explorer & retake readme screenshot (like a RN FlatList sticky header)
+- I'd _really_ love to automate the whole installation process, but there are still a lot of manual steps. I haven't found a way that I'm happy with, for instance, to automate setting the system preferences. If you know of a way, please either [email me](mailto:nick@pachulski.me) or [submit a PR](https://github.com/pachun/boo/pulls). If it works, I will Venmo you $5.
