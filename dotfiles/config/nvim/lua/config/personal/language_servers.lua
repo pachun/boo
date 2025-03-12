@@ -2,6 +2,9 @@
 -- for configuration help, ask ChatGPT
 
 local language_servers = {
+	bashls = {
+		filetypes = { "sh", "bash", "zsh" },
+	},
 	marksman = {},
 	elixirls = {
 		cmd = { "elixir-ls" },
