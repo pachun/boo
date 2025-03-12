@@ -106,10 +106,29 @@ function use_aliases {
   alias gco="git checkout"
   alias gri="git rebase -i"
   alias wip="git add .; git commit -am 'wip' --no-verify"
-  alias gh='open $(git remote get-url origin | sed "s/\.git$//" | sed "s/git@github.com:/https:\/\/github.com\//")'
   alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
 
-  function t() {
+  function gh {
+    remote_url=$(git remote get-url origin 2>/dev/null)
+
+    if [[ -z "$remote_url" ]]; then
+      echo "No remote URL found." >&2
+      return 1
+    fi
+
+    remote_url=${remote_url%.git}
+
+    if [[ "$remote_url" =~ "github.com" ]]; then
+      open "${remote_url/git@github.com:/https://github.com/}"
+    elif [[ "$remote_url" =~ "gitlab.com" ]]; then
+      open "${remote_url/git@gitlab.com:/https://gitlab.com/}"
+    else
+      echo "Unknown remote host: $remote_url" >&2
+      return 1
+    fi
+  }
+
+  function t {
     if [[ -n "$1" ]]; then
       tmux new-session -s "$1"
     else
@@ -119,7 +138,7 @@ function use_aliases {
 
   function lplug {
     if [[ -z "$1" ]]; then
-      echo "Usage: lplug <filename>"
+      echo "Usage: lplug <neovim-plugin-name>"
       return 1
     fi
     nvim "$HOME/.config/nvim/lua/plugins/$1.lua"
