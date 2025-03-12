@@ -2,6 +2,7 @@
 -- for configuration help, ask ChatGPT
 
 local language_servers = {
+	marksman = {},
 	elixirls = {
 		cmd = { "elixir-ls" },
 	},
