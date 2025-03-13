@@ -17,7 +17,7 @@ function install_homebrew_apps {
   brew bundle
 }
 
-function enable_asdf_autcompletions {
+function enable_asdf_autocompletions {
   # https://asdf-vm.com/guide/getting-started.html#set-up-shell-completions-optional-3
   mkdir -p "${ASDF_DATA_DIR:-$HOME/.asdf}/completions"
   asdf completion zsh > "${ASDF_DATA_DIR:-$HOME/.asdf}/completions/_asdf"
