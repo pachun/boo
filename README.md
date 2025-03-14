@@ -17,6 +17,7 @@ Boo is a list of things that I install and configure on new or re-imaged Mac mac
 - [iPhone Settings](#iphone-settings)
 - [GitHub Setup](#github-setup)
 - [Dotfiles](#dotfiles)
+- [Open & Setup Installed Apps](#open-&-setup-installed-apps)
 
 ## Install
 
@@ -72,6 +73,28 @@ _This automatically happened on my last Sequioa 15.3.2 upgrade. We may be able t
 ```sh
 mkdir code && cd code && git clone git@github.com:pachun/boo.git && cd boo && ./install.sh
 ```
+
+### Open & Setup Installed Apps
+
+- Ghostty → Open Neovim (`vim`) → Lazy will open and install plugins
+- Spotify → Sign in
+- ChatGPT → Sign in
+- NordVPN → Sign in
+  - Settings → Appearance → Show application in → Menu Bar
+- Rectangle
+- Amphetamine
+  - Settings → Triggers → Enable (Disallow Bluetooth)
+  - Settings → Triggers → Add Trigger
+    - Name: Keep Awake When Connected to Power & External Display
+    - Criteria:
+      - Battery & Power Adapter → Only when power adapter is connected → Add Criterion
+      - Displays → Display Count = 1 → Ignore built-in display → On → Add Criterion
+    - Allow system to sleep when display is closed → Off
+    - Allow screen saver to run after 1 hour of inactivity
+- System Settings → General → Login Items & Extensions → Open at Login:
+  - NordVPN
+  - Amphetamine
+  - Rectangle
 
 ## Usage
 
