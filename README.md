@@ -14,6 +14,7 @@ Boo is a list of things that I install and configure on new or re-imaged Mac mac
 - [System Settings](#system-settings)
 - [Finder Settings](#finder-settings)
 - [Safari Settings](#safari-settings)
+- [Calendar Settings](#calendar-settings)
 - [iPhone Settings](#iphone-settings)
 - [GitHub Setup](#github-setup)
 - [Dotfiles](#dotfiles)
@@ -54,6 +55,10 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 ### Safari Settings
 
 - `⌘ ,` → Advanced → Show features for web developers → On
+
+### Calendar Settings
+
+- `⌘ ,` → Accounts → Add → Google → Only allow access to Contacts & Calendar
 
 ### iPhone Settings
 
