@@ -36,8 +36,8 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 - Trackpad → Tap to Click → On
 - Keyboard → Keyboard Shortcuts → Modifier Keys → Caps Lock → Control
 - Desktop & Dock → Dock → Automatically hide and show the Dock → On
-- Desktop & Dock → Desktop & Stage Manager → Click wallpaper to reveal desktop → Only in Stage Manager
 - Desktop & Dock → Desktop & Stage Manager → Show Items → On Desktop → Off
+- Desktop & Dock → Desktop & Stage Manager → Click wallpaper to reveal desktop → Only in Stage Manager
 - Control Center → Battery → Show Percentage → On
 - Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 
