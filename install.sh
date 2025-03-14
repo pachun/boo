@@ -55,7 +55,13 @@ function symlink_dotfiles {
 }
 
 function install_asdf_plugins {
+  asdf plugin add nodejs
+  asdf install nodejs 20.18.1
+  asdf set -u nodejs 20.18.1
+
   asdf plugin add yarn
+  asdf install yarn 1.22.22
+  asdf set -u yarn 1.22.22
 }
 
 function start_postgres {
