@@ -56,6 +56,8 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 
 ### iPhone Settings
 
+_This automatically happened on my last Sequioa 15.3.2 upgrade. We may be able to remove this section._
+
 - Settings → Apps → Messages → Text Message Forwarding → New Machine's Name → On
 
 ### GitHub Setup
