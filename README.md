@@ -137,5 +137,4 @@ Apps and dotfiles are personal, but the installation is not. Everything is tailo
 
 ## To Do
 
-- Keep nvim-tree title at the top of the file explorer & retake readme screenshot (like a RN FlatList sticky header)
 - I'd _really_ love to automate the whole installation process, but there are still a lot of manual steps. I haven't found a way that I'm happy with, for instance, to automate setting the system preferences. If you know of a way, please either [email me](mailto:nick@pachulski.me) or [submit a PR](https://github.com/pachun/boo/pulls). If it works, I will Venmo you $5.
