@@ -138,3 +138,17 @@ Apps and dotfiles are personal, but the installation is not. Everything is tailo
 ## To Do
 
 - I'd _really_ love to automate the whole installation process, but there are still a lot of manual steps. I haven't found a way that I'm happy with, for instance, to automate setting the system preferences. If you know of a way, please either [email me](mailto:nick@pachulski.me) or [submit a PR](https://github.com/pachun/boo/pulls). If it works, I will Venmo you $5.
+
+  - Note to self: I think the most promising way to do this is with `defaults write`. If you run `defaults read > prefs`, initialize a git repo, make a change to a preference, and then run `defaults read > prefs` again, you can see the relavant changes in the prefs file related to the preferences change. However, they don't seem to propogate when I try to make the same change with defaults write. For example, when I run this:
+
+    ```sh
+    defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
+    defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -int 1
+    defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+    defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+    killall Finder
+    killall SystemUIServer
+    ```
+
+    Which I think, should change the preference "Enable tap to click" from off to on, it's not changed in the Settings app UI, nor does tap to click begin working.
