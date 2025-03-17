@@ -153,3 +153,5 @@ Apps and dotfiles are personal, but the installation is not. Everything is tailo
     ```
 
     Which I think, should change the preference "Enable tap to click" from off to on, it's not changed in the Settings app UI, nor does tap to click begin working.
+
+- Add dark/light mode wallpapers - ChatGPT has info about a few ways we can do this
