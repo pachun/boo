@@ -15,6 +15,7 @@ Boo is a list of things that I install and configure on new or re-imaged Mac mac
 - [Finder Settings](#finder-settings)
 - [Safari Settings](#safari-settings)
 - [Calendar Settings](#calendar-settings)
+- [TextEdit Settings](#textedit-settings)
 - [iPhone Settings](#iphone-settings)
 - [GitHub Setup](#github-setup)
 - [Dotfiles](#dotfiles)
@@ -61,6 +62,10 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 ### Calendar Settings
 
 - `⌘ ,` → Accounts → Add → Google → Only allow access to Contacts & Calendar
+
+### TextEdit Settings
+
+- `⌘ ,` → New Document → Format → Plain text
 
 ### iPhone Settings
 
