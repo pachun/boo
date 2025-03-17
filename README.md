@@ -56,6 +56,7 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 ### Safari Settings
 
 - `⌘ ,` → Advanced → Show features for web developers → On
+- [Install Privacy](https://apps.apple.com/us/app/privacy-for-safari/id6449850851)
 
 ### Calendar Settings
 
