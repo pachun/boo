@@ -42,6 +42,7 @@ Xcode takes a while to install and is required to [install the dotfiles](#dotfil
 - Desktop & Dock → Desktop & Stage Manager → Show Items → On Desktop → Off
 - Desktop & Dock → Desktop & Stage Manager → Click wallpaper to reveal desktop → Only in Stage Manager
 - Control Center → Battery → Show Percentage → On
+- Control Center → Menu Bar Only → Weather → Show in Menu Bar
 - Accessibility → Pointer Control → Trackpad Options → Use trackpad for dragging → On (Without Drag Lock)
 - Touch ID & Password → Apple Watch → Use Apple Watch to unlock your applications and your Mac. → Apple Watch Name → On
 
