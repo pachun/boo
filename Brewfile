@@ -22,3 +22,4 @@ brew "coreutils"
 # the following two are needed for working on the emma email client
 tap "gigalixir/brew"
 brew "gigalixir"
+brew "deno" # required for peek.nvim

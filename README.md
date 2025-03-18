@@ -161,3 +161,11 @@ Apps and dotfiles are personal, but the installation is not. Everything is tailo
     Which I think, should change the preference "Enable tap to click" from off to on, it's not changed in the Settings app UI, nor does tap to click begin working.
 
 - Add dark/light mode wallpapers - ChatGPT has info about a few ways we can do this
+- I recently added peek.nvim for previewing markdown files with `<leader>md`. If you see an error when trying to use peek for the first time, relating to a .js file not existing, run:
+
+  ```
+  cd ~/.local/share/nvim/lazy/peek.nvim
+  deno task build:fast
+  ```
+
+  It's supposed to do this on its own. I'm unsure why I had to do it manually.
