@@ -128,14 +128,6 @@ function use_aliases {
     fi
   }
 
-  function t {
-    if [[ -n "$1" ]]; then
-      tmux new-session -s "$1"
-    else
-      tmux
-    fi
-  }
-
   function lplug {
     if [[ -z "$1" ]]; then
       echo "Usage: lplug <neovim-plugin-name>"
@@ -164,17 +156,19 @@ function use_aliases {
     echo "Renamed session '$current_session' → '$1'"
   }
 
-  function tat {
+  function t {
     if [[ -z "$1" ]]; then
-      echo "Usage: tat SESSION_NAME"
+      echo "Usage: t SESSION_NAME"
+      echo "If the session name exists, you'll attach"
+      echo "If the session name does not exist, you'll create a new named session"
+      echo "You can list the current sessions with: tls"
       return 1
     fi
 
     if tmux has-session -t "$1" 2>/dev/null; then
       tmux attach-session -t "$1"
     else
-      echo "No session named '$1' found."
-      return 1
+      tmux new-session -s "$1"
     fi
   }
 }
