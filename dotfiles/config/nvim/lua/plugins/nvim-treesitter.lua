@@ -7,7 +7,7 @@ return {
 
 		treesitter_config.setup({
 			highlight = { enable = true },
-			indent = { enable = true },
+			indent = { enable = true, disable = { "ruby" } },
 			incremental_selection = { enable = true },
 			autotag = { enable = true },
 			ensure_installed = syntax_highlighters,
