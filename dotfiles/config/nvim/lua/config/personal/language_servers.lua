@@ -5,6 +5,22 @@ local language_servers = {
 	bashls = {
 		filetypes = { "sh", "bash", "zsh" },
 	},
+	efm = {
+		filetypes = { "ruby" },
+		init_options = { documentFormatting = true },
+		settings = {
+			rootMarkers = { ".git/" },
+			languages = {
+				ruby = {
+					{
+						lintCommand = "./bin/rubocop --format emacs",
+						lintStdin = false,
+						lintFormats = { "%f:%l:%c: %m" },
+					},
+				},
+			},
+		},
+	},
 	marksman = {},
 	elixirls = {
 		cmd = { "elixir-ls" },
