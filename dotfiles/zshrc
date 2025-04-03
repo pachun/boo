@@ -1,10 +1,11 @@
 function use_vim_mode_on_cli {
   bindkey -v
-}
 
-function use_jj_instead_of_escape {
-  switch_to_vim_command_mode=jj
-  bindkey -M viins $switch_to_vim_command_mode vi-cmd-mode
+  function use_jj_instead_of_escape {
+    switch_to_vim_command_mode=jj
+    bindkey -M viins $switch_to_vim_command_mode vi-cmd-mode
+  }
+  use_jj_instead_of_escape
 }
 
 function enable_colorized_output_for_commands_which_support_it_like_ls {
@@ -204,7 +205,6 @@ function add_postgres_to_path {
 }
 
 use_vim_mode_on_cli
-use_jj_instead_of_escape
 enable_colorized_output_for_commands_which_support_it_like_ls
 use_custom_prompt
 set_neovim_as_default_editor
