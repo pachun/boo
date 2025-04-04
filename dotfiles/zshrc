@@ -161,9 +161,9 @@ function use_aliases {
   function t {
     if [[ -z "$1" ]]; then
       echo "Usage: t SESSION_NAME"
-      echo "If the session name exists, you'll attach"
-      echo "If the session name does not exist, you'll create a new named session"
-      echo "You can list the current sessions with: tls"
+      echo "  If the session name exists, you'll attach"
+      echo "  If the session name does not exist, you'll create a new named session"
+      echo "  (You can list the current sessions with: \`tls\`)"
       return 1
     fi
 
