@@ -1,5 +1,4 @@
 -- available lsps are listed in `:Mason` tab 2
--- for configuration help, ask ChatGPT
 
 local language_servers = {
 	bashls = {
