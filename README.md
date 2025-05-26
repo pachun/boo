@@ -144,6 +144,7 @@ Apps and dotfiles are personal, but the installation is not. Everything is tailo
 
 ## To Do
 
+- Fix tests with parens in their names not being passed to tmux panes properly `()`
 - Add dark/light mode wallpapers - ChatGPT has info about a few ways we can do this
 - I recently added peek.nvim for previewing markdown files with `<leader>md`. If you see an error when trying to use peek for the first time, relating to a .js file not existing, run:
 
