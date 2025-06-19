@@ -7,7 +7,7 @@ return {
 	config = function()
 		require("nvim-tree").setup({
 			sort = { sorter = "case_sensitive" },
-			view = { width = 30 },
+			view = { width = 40 },
 			renderer = {
 				group_empty = true,
 				-- set the title to be the directory name
