@@ -22,7 +22,7 @@ clipboard-write = allow
 # preferences
 # ---
 
-font-size = 16
+font-size = 18
 font-family = MonoLisa
 cursor-style = block
 cursor-style-blink = false
