@@ -109,6 +109,7 @@ function use_aliases {
   alias gm="git merge"
   alias wip="git add .; git commit -am 'wip' --no-verify"
   alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
+  alias keepmain='git branch | grep -vE "^\*? ?main$" | xargs git branch -D'
 
   function gh {
     remote_url=$(git remote get-url origin 2>/dev/null)
