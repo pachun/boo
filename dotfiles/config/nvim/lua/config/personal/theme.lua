@@ -6,7 +6,7 @@
 
 return {
   dark = {
-    name = "catppuccin-frappe",
+    name = "everforest",
     style = "dark",
   },
   light = {

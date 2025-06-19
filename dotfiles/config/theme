@@ -9,12 +9,12 @@
 
 # ghostty themes can be listed with `ghostty +list-themes`
 [ghostty]
-dark=catppuccin-frappe
+dark=everforest-medium
 light=gruvboxLight
 
 # available nvim themes are in ~/.config/nvim/lua/plugins/themes.lua
 [nvim]
-dark_theme=catppuccin-frappe
+dark_theme=everforest
 dark_style=dark
 light_theme=gruvbox
 light_style=light
