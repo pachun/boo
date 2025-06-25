@@ -125,7 +125,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fr",
 			action = function()
-				telescope_builtin.oldfiles()
+				telescope_builtin.oldfiles({ cwd_only = true })
 			end,
 		},
 		{
