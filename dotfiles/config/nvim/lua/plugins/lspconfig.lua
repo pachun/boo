@@ -14,7 +14,16 @@ return {
 			local autocmds = require("config.personal.autocmds")
 
 			-- install lsps
-			mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(language_servers) })
+			mason_lspconfig.setup({
+				ensure_installed = vim.tbl_keys(language_servers),
+
+				-- mason_lspconfig automatically enables installed servers, by default;
+				-- we do that below, with custom configs, so we prevent mason from
+				-- automatically doing that with default configs here. Otherwise, multiple
+				-- instances of each lsp (one that mason starts with a default config,
+				-- and one that we set up below with a custom config) attach to buffers.
+				automatic_enable = false,
+			})
 
 			-- set keymaps for all lsps
 			autocmds.setup_lsp_keymaps()
