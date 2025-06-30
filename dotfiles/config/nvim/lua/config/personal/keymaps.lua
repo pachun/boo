@@ -109,7 +109,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ff",
 			action = function()
-				telescope_builtin.find_files()
+				telescope_builtin.find_files({ cwd_only = true, hidden = true })
 			end,
 		},
 		{
@@ -117,7 +117,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fs",
 			action = function()
-				telescope_builtin.live_grep()
+				telescope_builtin.live_grep({ cwd_only = true, hidden = true })
 			end,
 		},
 		{
@@ -125,7 +125,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>fr",
 			action = function()
-				telescope_builtin.oldfiles({ cwd_only = true })
+				telescope_builtin.oldfiles({ cwd_only = true, hidden = true })
 			end,
 		},
 		{
