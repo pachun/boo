@@ -93,6 +93,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ee",
 			action = function()
+				nvim_tree_api.tree.collapse_all()
 				nvim_tree_api.tree.toggle()
 			end,
 		},
@@ -101,6 +102,7 @@ local keymaps = {
 			mode = "n",
 			command = "<leader>ef",
 			action = function()
+				nvim_tree_api.tree.collapse_all()
 				nvim_tree_api.tree.toggle({ find_file = true, focus = true })
 			end,
 		},
