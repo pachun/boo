@@ -199,6 +199,15 @@ local keymaps = {
 			end,
 		},
 		{
+			description = "Toggle Dropdown Suggestions",
+			mode = "n",
+			command = "<leader>dd",
+			action = function()
+				_G.cmp_enabled = not _G.cmp_enabled
+				print(_G.cmp_enabled and "dropdown suggestions enabled" or "dropdown suggestions disabled")
+			end,
+		},
+		{
 			description = "Toggle Markdown Preview",
 			mode = "n",
 			command = "<leader>md",
