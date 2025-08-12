@@ -217,5 +217,8 @@ tell_lazygit_to_use_home_folder_config
 use_direnv
 add_postgres_to_path
 
+# for claude code:
+export PATH="$HOME/.local/bin:$PATH"
+
 # keep at end
 enable_zsh_syntax_highlighting
