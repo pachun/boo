@@ -109,7 +109,14 @@ function use_aliases {
   alias gm="git merge"
   alias wip="git add .; git commit -am 'wip' --no-verify"
   alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
-  alias keepmain='git branch | grep -vE "^\*? ?main$" | xargs git branch -D'
+  function keep {
+    if [[ -z "$1" ]]; then
+      echo "Usage: keep <branch-name>"
+      echo "Deletes all branches except the specified branch"
+      return 1
+    fi
+    git branch | grep -vE "^\*? ?$1$" | xargs git branch -D
+  }
 
   function gh {
     remote_url=$(git remote get-url origin 2>/dev/null)
