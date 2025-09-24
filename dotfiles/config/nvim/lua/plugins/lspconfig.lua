@@ -8,7 +8,6 @@ return {
 		},
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
-			local lspconfig = require("lspconfig")
 
 			local language_servers = require("config.personal.language_servers")
 			local autocmds = require("config.personal.autocmds")
@@ -35,9 +34,8 @@ return {
 			}
 
 			for language_server_name, language_server_config in pairs(language_servers) do
-				lspconfig[language_server_name].setup(
-					vim.tbl_extend("force", config_for_all_lsps, language_server_config)
-				)
+				vim.lsp.config[language_server_name] = vim.tbl_extend("force", config_for_all_lsps, language_server_config)
+				vim.lsp.enable(language_server_name)
 			end
 		end,
 	},
