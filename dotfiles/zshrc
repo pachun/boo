@@ -53,7 +53,7 @@ function use_custom_prompt {
 
   function status_colored_git_branch {
     if $(git rev-parse --is-inside-work-tree > /dev/null 2>&1); then
-      git_branch=$(git branch | awk '/\*/ { print $2; }')
+      git_branch=$(git rev-parse --abbrev-ref HEAD)
       git_status=$(git status)
       if [[ -n "$(echo $git_status | grep 'Changes not staged')" ]]; then
         echo "%F{$COLOR_BRIGHT_MAGENTA}$git_branch%f"
