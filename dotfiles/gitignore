@@ -2,3 +2,4 @@
 .tool-versions
 .envrc
 .claude
+next-env.d.ts
