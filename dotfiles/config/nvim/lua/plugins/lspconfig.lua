@@ -29,8 +29,11 @@ return {
 
 			-- configure and attach mason-installed lsps to lspconfig
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
+			local capabilities = cmp_nvim_lsp.default_capabilities()
+			capabilities.offsetEncoding = { "utf-8" }
+
 			local config_for_all_lsps = {
-				capabilities = cmp_nvim_lsp.default_capabilities(),
+				capabilities = capabilities,
 			}
 
 			for language_server_name, language_server_config in pairs(language_servers) do

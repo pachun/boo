@@ -252,7 +252,7 @@ local keymaps = {
 			mode = "n",
 			command = "gd",
 			action = function()
-				telescope_builtin.lsp_definitions()
+				telescope_builtin.lsp_definitions({ position_encoding = "utf-8" })
 			end,
 		},
 		{
@@ -260,7 +260,7 @@ local keymaps = {
 			mode = "n",
 			command = "gr",
 			action = function()
-				telescope_builtin.lsp_references()
+				telescope_builtin.lsp_references({ position_encoding = "utf-8" })
 			end,
 		},
 	},
