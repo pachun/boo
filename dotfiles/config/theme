@@ -9,7 +9,7 @@
 
 # ghostty themes can be listed with `ghostty +list-themes`
 [ghostty]
-dark=catppuccin-frappe.conf
+dark=Catppuccin Frappe
 light=gruvboxLight
 
 # available nvim themes are in ~/.config/nvim/lua/plugins/themes.lua
