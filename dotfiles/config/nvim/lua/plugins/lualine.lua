@@ -26,7 +26,13 @@ return {
 				lualine_a = { "" },
 				lualine_b = { "", "", "diagnostics" },
 				lualine_c = { "filename" },
-				lualine_x = { "", "", "filetype" },
+				lualine_x = {
+					{
+						require("lazy.status").updates,
+						cond = require("lazy.status").has_updates,
+					},
+					"filetype",
+				},
 				lualine_y = { "" },
 				lualine_z = { "location" },
 			},
