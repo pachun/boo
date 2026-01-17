@@ -4,7 +4,6 @@ local telescope_builtin = require("telescope.builtin")
 local helpers = require("config.personal.helpers")
 local supermaven_api = require("supermaven-nvim.api")
 local gitsigns = require("gitsigns")
-local peek = require("peek")
 
 local keymaps = {
 	basic = {
@@ -207,18 +206,6 @@ local keymaps = {
 			action = function()
 				_G.cmp_enabled = not _G.cmp_enabled
 				print(_G.cmp_enabled and "dropdown suggestions enabled" or "dropdown suggestions disabled")
-			end,
-		},
-		{
-			description = "Toggle Markdown Preview",
-			mode = "n",
-			command = "<leader>md",
-			action = function()
-				if peek.is_open() then
-					peek.close()
-				else
-					peek.open()
-				end
 			end,
 		},
 	},
