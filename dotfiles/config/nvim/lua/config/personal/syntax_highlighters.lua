@@ -27,6 +27,7 @@ local syntax_highlighters = {
 	"objc",
 	"python",
 	"ruby",
+	"rust",
 	"scss",
 	"swift",
 	"tmux",

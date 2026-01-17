@@ -44,6 +44,7 @@ local language_servers = {
 			},
 		},
 	},
+	rust_analyzer = {},
 }
 
 return language_servers
