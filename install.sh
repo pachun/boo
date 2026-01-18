@@ -150,12 +150,15 @@ function remap_caps_lock_to_control_on_arch {
 
 function use_zsh {
   chsh -s /bin/zsh
-  exec zsh
+}
+
+function sync_theme {
+  $HOME/.config/bin/update-theme.sh
 }
 
 function start_hyprland_on_arch {
   if [[ "$OS" == "arch" ]]; then
-    Hyprland
+    start-hyprland
   fi
 }
 
@@ -166,9 +169,10 @@ install_packages
 enable_asdf_autocompletions
 create_gitconfig_dotfile
 symlink_dotfiles
+sync_theme
 install_asdf_plugins
 install_claude
 start_postgres
 remap_caps_lock_to_control_on_arch
-start_hyprland_on_arch
 use_zsh
+start_hyprland_on_arch

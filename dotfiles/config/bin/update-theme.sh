@@ -23,7 +23,11 @@ NVIM_LIGHT_STYLE=$(theme "nvim" "light_style")
 
 TEMP_GHOSTTY=$(mktemp)
 grep -v '^theme = ' "$GHOSTTY_CONFIG" > "$TEMP_GHOSTTY"
-echo "theme = dark:${GHOSTTY_DARK},light:${GHOSTTY_LIGHT}" >> "$TEMP_GHOSTTY"
+if [[ "$(uname)" == "Darwin" ]]; then
+  echo "theme = dark:${GHOSTTY_DARK},light:${GHOSTTY_LIGHT}" >> "$TEMP_GHOSTTY"
+else
+  echo "theme = ${GHOSTTY_DARK}" >> "$TEMP_GHOSTTY"
+fi
 mv "$TEMP_GHOSTTY" "$GHOSTTY_CONFIG"
 
 mkdir -p "$(dirname "$NEOVIM_LUA")"
