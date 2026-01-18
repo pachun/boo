@@ -149,6 +149,17 @@ function remap_caps_lock_to_control_on_arch {
   fi
 }
 
+function disable_ipv6_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    # Disable IPv6 to avoid 5s DNS timeouts on networks with broken IPv6
+    # (router hands out IPv6 addresses but can't route IPv6 traffic)
+    if [[ ! -f /etc/sysctl.d/40-ipv6.conf ]]; then
+      echo -e "net.ipv6.conf.all.disable_ipv6 = 1\nnet.ipv6.conf.default.disable_ipv6 = 1" | sudo tee /etc/sysctl.d/40-ipv6.conf
+      sudo sysctl --system
+    fi
+  fi
+}
+
 function use_zsh {
   chsh -s /bin/zsh
 }
@@ -181,5 +192,6 @@ install_asdf_plugins
 install_claude
 start_postgres
 remap_caps_lock_to_control_on_arch
+disable_ipv6_on_arch
 use_zsh
 start_hyprland_on_arch
