@@ -1,3 +1,9 @@
+if [[ "$(uname)" == "Darwin" ]]; then
+  OS="mac"
+elif [[ -f /etc/arch-release ]]; then
+  OS="arch"
+fi
+
 function use_vim_mode_on_cli {
   bindkey -v
 
@@ -15,7 +21,11 @@ function enable_colorized_output_for_commands_which_support_it_like_ls {
 function enable_zsh_syntax_highlighting {
   # typing `ech` will appear red in the cli
   # typing `echo` will appear green in the cli
-  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  if [[ "$OS" == "mac" ]]; then
+    source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  elif [[ "$OS" == "arch" ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  fi
 }
 
 function use_custom_prompt {
@@ -105,7 +115,9 @@ function use_aliases {
   alias e=exit
   alias c=clear
   alias vim=nvim
-  alias x=gitx
+  if [[ "$OS" == "mac" ]]; then
+    alias x=gitx
+  fi
   alias p='git push origin $(git rev-parse --abbrev-ref HEAD)'
   alias gs="git status"
   alias gl="git log"
@@ -113,7 +125,14 @@ function use_aliases {
   alias gri="git rebase -i"
   alias gm="git merge"
   alias wip="git add .; git commit -am 'wip' --no-verify"
-  alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
+  if [[ "$OS" == "mac" ]]; then
+    alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
+  elif [[ "$OS" == "arch" ]]; then
+    alias lanip="ip addr | grep 'inet ' | grep -v '127.0.0.1' | awk '{print \$2}' | cut -d/ -f1"
+  fi
+  if [[ "$OS" == "arch" ]]; then
+    alias battery="cat /sys/class/power_supply/BAT1/capacity"
+  fi
   function keep {
     if [[ -z "$1" ]]; then
       echo "Usage: keep <branch-name>"
@@ -133,10 +152,16 @@ function use_aliases {
 
     remote_url=${remote_url%.git}
 
+    if [[ "$OS" == "mac" ]]; then
+      open_cmd="open"
+    else
+      open_cmd="xdg-open"
+    fi
+
     if [[ "$remote_url" =~ "github.com" ]]; then
-      open "${remote_url/git@github.com:/https://github.com/}"
+      $open_cmd "${remote_url/git@github.com:/https://github.com/}"
     elif [[ "$remote_url" =~ "gitlab.com" ]]; then
-      open "${remote_url/git@gitlab.com:/https://gitlab.com/}"
+      $open_cmd "${remote_url/git@gitlab.com:/https://gitlab.com/}"
     else
       echo "Unknown remote host: $remote_url" >&2
       return 1
@@ -213,8 +238,10 @@ function tell_lazygit_to_use_home_folder_config {
   export XDG_CONFIG_HOME="$HOME/.config"
 }
 
-function add_postgres_to_path {
-  export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+function add_postgres_to_path_on_mac {
+  if [[ "$OS" == "mac" ]]; then
+    export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+  fi
 }
 
 use_vim_mode_on_cli
@@ -227,7 +254,7 @@ setup_asdf
 enable_asdf_autocompletion
 tell_lazygit_to_use_home_folder_config
 use_direnv
-add_postgres_to_path
+add_postgres_to_path_on_mac
 
 # for claude code:
 export PATH="$HOME/.local/bin:$PATH"

@@ -1,20 +1,54 @@
+if [[ "$(uname)" == "Darwin" ]]; then
+  OS="mac"
+elif [[ -f /etc/arch-release ]]; then
+  OS="arch"
+fi
+
 function install_monolisa_font {
-  cp $PWD/assets/MonoLisa/*.ttf $HOME/Library/Fonts/
+  if [[ "$OS" == "mac" ]]; then
+    cp $PWD/assets/MonoLisa/*.ttf $HOME/Library/Fonts/
+  elif [[ "$OS" == "arch" ]]; then
+    mkdir -p $HOME/.local/share/fonts
+    cp $PWD/assets/MonoLisa/*.ttf $HOME/.local/share/fonts/
+    fc-cache -fv
+  fi
 }
 
-function set_desktop_wallpaper {
-  osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'$PWD/assets/less\ is\ less.png'"'
+function set_desktop_wallpaper_on_mac {
+  if [[ "$OS" == "mac" ]]; then
+    osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'$PWD/assets/less\ is\ less.png'"'
+  fi
 }
 
-function install_homebrew {
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  echo >> ~/.zprofile
-  echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
-  eval "$(/opt/homebrew/bin/brew shellenv)"
+function install_package_manager {
+  if [[ "$OS" == "mac" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    echo >> ~/.zprofile
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ "$OS" == "arch" ]]; then
+    sudo pacman -S --needed --noconfirm git base-devel
+    # install yay (AUR helper) if not present
+    if ! command -v yay &> /dev/null; then
+      git clone https://aur.archlinux.org/yay.git /tmp/yay
+      cd /tmp/yay && makepkg -si --noconfirm
+      cd - > /dev/null
+      rm -rf /tmp/yay
+    fi
+  fi
 }
 
-function install_homebrew_apps {
-  brew bundle
+function install_packages {
+  if [[ "$OS" == "mac" ]]; then
+    brew bundle
+  elif [[ "$OS" == "arch" ]]; then
+    sudo pacman -S --needed --noconfirm \
+      neovim tmux zsh ripgrep git base-devel \
+      hyprland hyprpaper chromium \
+      zsh-syntax-highlighting direnv postgresql keyd \
+      tree-sitter tree-sitter-cli wl-clipboard
+    yay -S --needed --noconfirm ghostty asdf-vm
+  fi
 }
 
 function enable_asdf_autocompletions {
@@ -45,13 +79,43 @@ EOF
 }
 
 function symlink_dotfiles {
+  mkdir -p "$HOME/.config"
+
+  # shared dotfiles
   for file in $PWD/dotfiles/*; do
     filename=$(basename "$file")
-    ln -sf "$file" "$HOME/.$filename"
+    if [[ "$filename" == "config" ]]; then
+      # symlink each item inside config individually
+      for config_item in $PWD/dotfiles/config/*; do
+        config_name=$(basename "$config_item")
+        ln -sf "$config_item" "$HOME/.config/$config_name"
+      done
+    else
+      ln -sf "$file" "$HOME/.$filename"
+    fi
   done
 
-  # remove infinitely recursed symlink
-  rm -rf $PWD/dotfiles/config/config
+  # os-specific dotfiles
+  local os_dotfiles=""
+  if [[ "$OS" == "arch" ]]; then
+    os_dotfiles="$PWD/dotfiles-arch"
+  elif [[ "$OS" == "mac" ]]; then
+    os_dotfiles="$PWD/dotfiles-mac"
+  fi
+
+  if [[ -n "$os_dotfiles" && -d "$os_dotfiles" ]]; then
+    for file in $os_dotfiles/*; do
+      filename=$(basename "$file")
+      if [[ "$filename" == "config" ]]; then
+        for config_item in $os_dotfiles/config/*; do
+          config_name=$(basename "$config_item")
+          ln -sf "$config_item" "$HOME/.config/$config_name"
+        done
+      else
+        ln -sf "$file" "$HOME/.$filename"
+      fi
+    done
+  fi
 }
 
 function install_asdf_plugins {
@@ -64,16 +128,47 @@ function install_asdf_plugins {
   asdf set -u yarn 1.22.22
 }
 
+function install_claude {
+  npm install -g @anthropic-ai/claude-code
+}
+
 function start_postgres {
-  brew services start postgresql@17
+  if [[ "$OS" == "mac" ]]; then
+    brew services start postgresql@17
+  elif [[ "$OS" == "arch" ]]; then
+    sudo -u postgres initdb -D /var/lib/postgres/data
+    sudo systemctl enable --now postgresql
+  fi
+}
+
+function remap_caps_lock_to_control_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    echo -e "[ids]\n*\n\n[main]\ncapslock = leftcontrol" | sudo tee /etc/keyd/default.conf
+    sudo systemctl enable --now keyd
+  fi
+}
+
+function use_zsh {
+  chsh -s /bin/zsh
+  exec zsh
+}
+
+function start_hyprland_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    Hyprland
+  fi
 }
 
 install_monolisa_font
-set_desktop_wallpaper
-install_homebrew
-install_homebrew_apps
+set_desktop_wallpaper_on_mac
+install_package_manager
+install_packages
 enable_asdf_autocompletions
 create_gitconfig_dotfile
 symlink_dotfiles
 install_asdf_plugins
+install_claude
 start_postgres
+remap_caps_lock_to_control_on_arch
+start_hyprland_on_arch
+use_zsh

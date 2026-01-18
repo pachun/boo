@@ -16,8 +16,14 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+local os_plugins = vim.fn.has("mac") == 1 and "plugins-mac" or "plugins-arch"
+
 require("lazy").setup({
-	spec = { { import = "plugins" } },
+	spec = {
+		{ import = "plugins" },
+		{ import = os_plugins },
+	},
 	checker = { enabled = true, notify = false },
 	change_detection = { enabled = true, notify = false },
 })

@@ -1,0 +1,2 @@
+# Start Hyprland automatically on TTY1 login
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
