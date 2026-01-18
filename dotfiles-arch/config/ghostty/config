@@ -2,7 +2,7 @@
 # preferences
 # ---
 
-font-size = 16
+font-size = 12
 font-family = MonoLisa Variable
 cursor-style = block
 cursor-style-blink = false
