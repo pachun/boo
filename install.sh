@@ -44,9 +44,9 @@ function install_packages {
   elif [[ "$OS" == "arch" ]]; then
     sudo pacman -S --needed --noconfirm \
       neovim tmux zsh ripgrep git base-devel rust unzip \
-      hyprland hyprpaper chromium \
+      hyprland hyprpaper chromium openssh \
       zsh-syntax-highlighting direnv postgresql keyd \
-      tree-sitter tree-sitter-cli wl-clipboard
+      tree-sitter tree-sitter-cli wl-clipboard less
     yay -S --needed --noconfirm ghostty asdf-vm
   fi
 }
