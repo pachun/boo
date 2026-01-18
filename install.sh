@@ -43,7 +43,7 @@ function install_packages {
     brew bundle
   elif [[ "$OS" == "arch" ]]; then
     sudo pacman -S --needed --noconfirm \
-      neovim tmux zsh ripgrep git base-devel \
+      neovim tmux zsh ripgrep git base-devel rust unzip \
       hyprland hyprpaper chromium \
       zsh-syntax-highlighting direnv postgresql keyd \
       tree-sitter tree-sitter-cli wl-clipboard
@@ -156,6 +156,11 @@ function sync_theme {
   $HOME/.config/bin/update-theme.sh
 }
 
+function install_nvim_plugins {
+  nvim --headless "+Lazy! sync" +qa
+  nvim --headless "+TSUpdateSync" +qa
+}
+
 function start_hyprland_on_arch {
   if [[ "$OS" == "arch" ]]; then
     start-hyprland
@@ -170,6 +175,7 @@ enable_asdf_autocompletions
 create_gitconfig_dotfile
 symlink_dotfiles
 sync_theme
+install_nvim_plugins
 install_asdf_plugins
 install_claude
 start_postgres
