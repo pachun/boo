@@ -1,7 +1,7 @@
 {
   "height": 30,
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["clock"],
+  "modules-center": ["custom/clock"],
   "modules-right": ["network", "battery"],
 
   "network": {
@@ -18,8 +18,9 @@
     "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
   },
 
-  "clock": {
-    "format": "{:%a %b %d  %I:%M %p}",
+  "custom/clock": {
+    "interval": 60,
+    "exec": "date '+%A %B %d  %-I:%M %p'",
     "tooltip": false
   },
 
