@@ -129,6 +129,8 @@ function use_aliases {
     alias lanip="ifconfig | grep 'inet ' | grep -Fv 127.0.0.1 | awk '{print \$2}'"
   elif [[ "$OS" == "arch" ]]; then
     alias lanip="ip addr | grep 'inet ' | grep -v '127.0.0.1' | awk '{print \$2}' | cut -d/ -f1"
+    alias nord_connect="nordvpn connect --group Dedicated_IP"
+    alias nord_disconnect="nordvpn disconnect"
   fi
   if [[ "$OS" == "arch" ]]; then
     alias battery="cat /sys/class/power_supply/BAT1/capacity"

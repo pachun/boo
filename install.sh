@@ -53,7 +53,7 @@ function install_packages {
     yay -S --needed --noconfirm swayosd-git
     # portal for dark mode detection in browsers
     sudo pacman -S --needed --noconfirm xdg-desktop-portal xdg-desktop-portal-gtk
-    yay -S --needed --noconfirm ghostty asdf-vm
+    yay -S --needed --noconfirm ghostty asdf-vm nordvpn-bin
   fi
 }
 
@@ -178,6 +178,13 @@ function use_dark_mode_on_arch {
   fi
 }
 
+function setup_nordvpn_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    sudo systemctl enable --now nordvpnd
+    sudo gpasswd -a $USER nordvpn
+  fi
+}
+
 function use_zsh {
   chsh -s /bin/zsh
 }
@@ -213,5 +220,6 @@ remap_keys_on_arch
 disable_ipv6_on_arch
 start_audio_on_arch
 use_dark_mode_on_arch
+setup_nordvpn_on_arch
 use_zsh
 start_hyprland_on_arch

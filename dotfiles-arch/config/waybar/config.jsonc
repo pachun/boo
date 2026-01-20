@@ -2,7 +2,7 @@
   "height": 30,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/clock"],
-  "modules-right": ["network", "battery"],
+  "modules-right": ["custom/nordvpn", "network", "battery"],
 
   "network": {
     "format-wifi": "󰤨",
@@ -26,5 +26,11 @@
 
   "hyprland/workspaces": {
     "format": "{id}"
+  },
+
+  "custom/nordvpn": {
+    "interval": 5,
+    "return-type": "json",
+    "exec": "if nordvpn status | grep -q 'Connected'; then echo '{\"text\": \"󰦝\", \"tooltip\": \"NordVPN Connected\"}'; else echo '{\"text\": \"\"}'; fi"
   }
 }

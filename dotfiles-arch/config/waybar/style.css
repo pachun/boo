@@ -29,6 +29,7 @@ window#waybar {
   color: #c6d0f5;
 }
 
+#custom-nordvpn,
 #network,
 #battery {
   padding: 0 5px;
