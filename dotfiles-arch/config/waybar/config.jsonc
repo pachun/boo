@@ -1,6 +1,6 @@
 {
   "height": 30,
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["custom/workspaces"],
   "modules-center": ["custom/clock"],
   "modules-right": ["custom/updates", "custom/nordvpn", "network", "bluetooth", "battery"],
 
@@ -32,8 +32,12 @@
     "tooltip": false
   },
 
-  "hyprland/workspaces": {
-    "format": "{id}"
+  "custom/workspaces": {
+    "exec": "~/.config/waybar/workspaces.sh",
+    "signal": 9,
+    "interval": 1,
+    "escape": false,
+    "tooltip": false
   },
 
   "custom/nordvpn": {

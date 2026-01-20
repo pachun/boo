@@ -46,7 +46,7 @@ function install_packages {
       neovim tmux zsh ripgrep git base-devel rust unzip \
       hyprland hyprpaper waybar ttf-nerd-fonts-symbols noto-fonts-emoji network-manager-applet chromium openssh \
       zsh-syntax-highlighting direnv postgresql keyd \
-      tree-sitter tree-sitter-cli wl-clipboard less pacman-contrib
+      tree-sitter tree-sitter-cli wl-clipboard less pacman-contrib socat
     # audio
     sudo pacman -S --needed --noconfirm \
       pipewire pipewire-pulse pipewire-alsa wireplumber playerctl

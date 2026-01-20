@@ -8,25 +8,8 @@ window#waybar {
   color: #c6d0f5;
 }
 
-#workspaces {
+#custom-workspaces {
   padding-left: 10px;
-}
-
-#workspaces button {
-  padding: 0 8px;
-  color: #737994;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-#workspaces button:hover {
-  background: transparent;
-  box-shadow: none;
-}
-
-#workspaces button.active {
-  color: #c6d0f5;
 }
 
 #custom-updates,
