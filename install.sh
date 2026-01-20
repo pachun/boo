@@ -146,9 +146,9 @@ function start_postgres {
   fi
 }
 
-function remap_caps_lock_to_control_on_arch {
+function remap_keys_on_arch {
   if [[ "$OS" == "arch" ]]; then
-    echo -e "[ids]\n*\n\n[main]\ncapslock = leftcontrol" | sudo tee /etc/keyd/default.conf
+    echo -e "[ids]\n*\n\n[main]\ncapslock = leftcontrol\nleftalt = leftmeta\nleftmeta = leftalt" | sudo tee /etc/keyd/default.conf
     sudo systemctl enable --now keyd
   fi
 }
@@ -201,7 +201,7 @@ install_nvim_plugins
 install_asdf_plugins
 install_claude
 start_postgres
-remap_caps_lock_to_control_on_arch
+remap_keys_on_arch
 disable_ipv6_on_arch
 start_audio_on_arch
 use_zsh
