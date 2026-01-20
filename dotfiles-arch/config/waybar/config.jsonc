@@ -2,7 +2,7 @@
   "height": 30,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/clock"],
-  "modules-right": ["custom/nordvpn", "network", "battery"],
+  "modules-right": ["custom/updates", "custom/nordvpn", "network", "battery"],
 
   "network": {
     "format-wifi": "󰤨",
@@ -32,5 +32,12 @@
     "interval": 5,
     "return-type": "json",
     "exec": "if nordvpn status | grep -q 'Connected'; then echo '{\"text\": \"󰦝\", \"tooltip\": \"NordVPN Connected\"}'; else echo '{\"text\": \"\"}'; fi"
+  },
+
+  "custom/updates": {
+    "interval": 1800,
+    "return-type": "json",
+    "exec": "official=$(checkupdates 2>/dev/null | wc -l); aur=$(yay -Qua 2>/dev/null | wc -l); total=$((official + aur)); if [ $total -gt 0 ]; then echo '{\"text\": \"󰏔 '$total'\", \"tooltip\": \"'$official' official, '$aur' AUR\"}'; else echo '{\"text\": \"\"}'; fi",
+    "on-click": "ghostty -e bash -c 'echo Checking for updates...; echo; official=$(checkupdates); aur=$(yay -Qua); echo \"Official:\"; echo \"${official:-None}\"; echo; echo \"AUR:\"; echo \"${aur:-None}\"; echo; read -p \"Install updates? [y/N] \" yn; [[ $yn == [yY] ]] && yay -Syu; echo; echo Done. Press enter to close.; read'"
   }
 }

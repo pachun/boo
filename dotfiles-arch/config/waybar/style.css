@@ -29,6 +29,7 @@ window#waybar {
   color: #c6d0f5;
 }
 
+#custom-updates,
 #custom-nordvpn,
 #network,
 #battery {
