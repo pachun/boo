@@ -51,6 +51,8 @@ function install_packages {
     sudo pacman -S --needed --noconfirm \
       pipewire pipewire-pulse pipewire-alsa wireplumber playerctl
     yay -S --needed --noconfirm swayosd-git
+    # bluetooth
+    sudo pacman -S --needed --noconfirm bluez bluez-utils blueman
     # portal for dark mode detection in browsers
     sudo pacman -S --needed --noconfirm xdg-desktop-portal xdg-desktop-portal-gtk
     yay -S --needed --noconfirm ghostty asdf-vm nordvpn-bin
@@ -172,6 +174,12 @@ function start_audio_on_arch {
   fi
 }
 
+function start_bluetooth_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    sudo systemctl enable --now bluetooth
+  fi
+}
+
 function use_dark_mode_on_arch {
   if [[ "$OS" == "arch" ]]; then
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
@@ -219,6 +227,7 @@ start_postgres
 remap_keys_on_arch
 disable_ipv6_on_arch
 start_audio_on_arch
+start_bluetooth_on_arch
 use_dark_mode_on_arch
 setup_nordvpn_on_arch
 use_zsh

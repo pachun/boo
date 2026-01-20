@@ -32,6 +32,7 @@ window#waybar {
 #custom-updates,
 #custom-nordvpn,
 #network,
+#bluetooth,
 #battery {
   padding: 0 5px;
 }

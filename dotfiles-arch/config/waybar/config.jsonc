@@ -2,7 +2,7 @@
   "height": 30,
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["custom/clock"],
-  "modules-right": ["custom/updates", "custom/nordvpn", "network", "battery"],
+  "modules-right": ["custom/updates", "custom/nordvpn", "network", "bluetooth", "battery"],
 
   "network": {
     "format-wifi": "󰤨",
@@ -10,6 +10,14 @@
     "tooltip-format-wifi": "{essid}",
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "nm-connection-editor"
+  },
+
+  "bluetooth": {
+    "format-on": "󰂯",
+    "format-off": "󰂲",
+    "format-connected": "󰂱",
+    "tooltip-format-connected": "{device_alias}",
+    "on-click": "blueman-manager"
   },
 
   "battery": {
