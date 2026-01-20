@@ -152,7 +152,7 @@ function start_postgres {
 
 function remap_keys_on_arch {
   if [[ "$OS" == "arch" ]]; then
-    echo -e "[ids]\n*\n\n[main]\ncapslock = leftcontrol\nleftalt = leftmeta\nleftmeta = leftalt\n\n[meta]\nc = C-c\nv = C-v\nS-[ = C-S-tab\nS-] = C-tab\n\n[meta:ghostty]\nc = C-S-c\nv = C-S-v" | sudo tee /etc/keyd/default.conf
+    echo -e "[ids]\n*\n\n[main]\ncapslock = leftcontrol\nleftalt = leftmeta\nleftmeta = leftalt\n\n[meta]\nv = C-v\n\n[meta+shift]\n[ = C-S-tab\n] = C-tab" | sudo tee /etc/keyd/default.conf
     sudo systemctl enable --now keyd
   fi
 }
