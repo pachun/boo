@@ -44,9 +44,13 @@ function install_packages {
   elif [[ "$OS" == "arch" ]]; then
     sudo pacman -S --needed --noconfirm \
       neovim tmux zsh ripgrep git base-devel rust unzip \
-      hyprland hyprpaper chromium openssh \
+      hyprland hyprpaper waybar chromium openssh \
       zsh-syntax-highlighting direnv postgresql keyd \
       tree-sitter tree-sitter-cli wl-clipboard less
+    # audio
+    sudo pacman -S --needed --noconfirm \
+      pipewire pipewire-pulse pipewire-alsa wireplumber playerctl
+    yay -S --needed --noconfirm swayosd-git
     yay -S --needed --noconfirm ghostty asdf-vm
   fi
 }
@@ -160,6 +164,12 @@ function disable_ipv6_on_arch {
   fi
 }
 
+function start_audio_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    systemctl --user enable --now pipewire pipewire-pulse wireplumber
+  fi
+}
+
 function use_zsh {
   chsh -s /bin/zsh
 }
@@ -193,5 +203,6 @@ install_claude
 start_postgres
 remap_caps_lock_to_control_on_arch
 disable_ipv6_on_arch
+start_audio_on_arch
 use_zsh
 start_hyprland_on_arch
