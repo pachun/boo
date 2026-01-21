@@ -1,7 +1,7 @@
 {
   "height": 30,
   "modules-left": ["custom/workspaces"],
-  "modules-center": ["custom/clock"],
+  "modules-center": ["custom/weather", "custom/clock"],
   "modules-right": ["custom/updates", "custom/nordvpn", "network", "bluetooth", "battery"],
 
   "network": {
@@ -29,6 +29,12 @@
   "custom/clock": {
     "interval": 60,
     "exec": "date '+%A %B %d  %-I:%M %p'",
+    "tooltip": false
+  },
+
+  "custom/weather": {
+    "interval": 900,
+    "exec": "~/.config/waybar/weather.sh",
     "tooltip": false
   },
 

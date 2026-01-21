@@ -12,6 +12,10 @@ window#waybar {
   padding-left: 10px;
 }
 
+#custom-weather {
+  padding-right: 15px;
+}
+
 #custom-updates,
 #custom-nordvpn,
 #network,
