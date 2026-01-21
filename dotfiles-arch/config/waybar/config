@@ -40,9 +40,9 @@
 
   "custom/workspaces": {
     "exec": "~/.config/waybar/workspaces.sh",
+    "return-type": "json",
     "signal": 9,
     "interval": 1,
-    "escape": false,
     "tooltip": false
   },
 

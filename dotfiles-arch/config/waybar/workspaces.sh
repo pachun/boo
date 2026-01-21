@@ -4,11 +4,15 @@ count=$(echo "$ids" | wc -l)
 active=$(hyprctl activeworkspace | grep "workspace ID" | awk '{print $3}')
 
 if [ "$count" -gt 1 ]; then
+    text=""
     for id in $ids; do
         if [ "$id" = "$active" ]; then
-            printf '<span color="#c6d0f5">%s</span> ' "$id"
+            text+="<span color=\\\"#c6d0f5\\\">$id</span> "
         else
-            printf '<span color="#737994">%s</span> ' "$id"
+            text+="<span color=\\\"#737994\\\">$id</span> "
         fi
     done
+    echo "{\"text\": \"$text\"}"
+else
+    echo "{\"text\": \"\"}"
 fi
