@@ -193,6 +193,13 @@ function setup_nordvpn_on_arch {
   fi
 }
 
+function enable_autologin_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    sudo mkdir -p /etc/systemd/system/getty@tty1.service.d
+    echo -e "[Service]\nExecStart=\nExecStart=-/usr/bin/agetty --autologin $USER --noclear %I \$TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/autologin.conf
+  fi
+}
+
 function use_zsh {
   chsh -s /bin/zsh
 }
@@ -230,5 +237,6 @@ start_audio_on_arch
 start_bluetooth_on_arch
 use_dark_mode_on_arch
 setup_nordvpn_on_arch
+enable_autologin_on_arch
 use_zsh
 start_hyprland_on_arch
