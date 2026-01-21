@@ -13,9 +13,10 @@
   },
 
   "bluetooth": {
-    "format-on": "󰂯",
+    "format": "󰂯",
     "format-off": "󰂲",
     "format-connected": "󰂱",
+    "format-no-controller": "",
     "tooltip-format-connected": "{device_alias}",
     "on-click": "blueman-manager"
   },
