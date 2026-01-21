@@ -21,9 +21,9 @@ window#waybar {
 #network,
 #bluetooth,
 #battery {
-  padding: 0 5px;
+  padding: 0 15px;
 }
 
 #battery {
-  padding-right: 15px;
+  padding-right: 20px;
 }
