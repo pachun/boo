@@ -141,6 +141,10 @@ function install_claude {
   npm install -g @anthropic-ai/claude-code
 }
 
+function install_gitspine {
+  curl -fsSL https://gitspine.com/install.sh | bash
+}
+
 function start_postgres {
   if [[ "$OS" == "mac" ]]; then
     brew services start postgresql@17
@@ -231,6 +235,7 @@ sync_theme
 install_nvim_plugins
 install_asdf_plugins
 install_claude
+install_gitspine
 start_postgres
 remap_keys_on_arch
 disable_ipv6_on_arch
