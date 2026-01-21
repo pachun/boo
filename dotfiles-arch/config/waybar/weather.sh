@@ -1,6 +1,8 @@
 #!/bin/bash
-# Fetch weather and sun times from wttr.in
-weather=$(curl -sf "wttr.in/?format=%t+%c+%s+%S" 2>/dev/null)
+cache_file="/tmp/waybar-weather-cache"
+
+# Fetch weather and sun times from wttr.in (5 second timeout)
+weather=$(curl -sf --max-time 10 "wttr.in/?format=%t+%c+%s+%S" 2>/dev/null)
 
 if [ -n "$weather" ]; then
     # Extract temp and condition icon
@@ -9,7 +11,7 @@ if [ -n "$weather" ]; then
 
     # Fallback icons if wttr.in icons don't work
     if [ -z "$icon" ]; then
-        condition=$(curl -sf "wttr.in/?format=%C" 2>/dev/null | tr '[:upper:]' '[:lower:]')
+        condition=$(curl -sf --max-time 10 "wttr.in/?format=%C" 2>/dev/null | tr '[:upper:]' '[:lower:]')
         case "$condition" in
             *clear*|*sunny*) icon="☀" ;;
             *cloud*) icon="☁" ;;
@@ -32,5 +34,10 @@ if [ -n "$weather" ]; then
         esac
     fi
 
-    echo "$icon $temp"
+    result="$icon $temp"
+    echo "$result" > "$cache_file"
+    echo "$result"
+elif [ -f "$cache_file" ]; then
+    # Fetch failed, use cached result
+    cat "$cache_file"
 fi

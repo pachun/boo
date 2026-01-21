@@ -33,7 +33,7 @@
   },
 
   "custom/weather": {
-    "interval": 900,
+    "interval": 300,
     "exec": "~/.config/waybar/weather.sh",
     "tooltip": false
   },
