@@ -210,6 +210,7 @@ function sync_theme {
 
 function install_nvim_plugins {
   nvim --headless "+Lazy! sync" +qa
+  nvim --headless "+MasonToolsInstallSync" +qa
   nvim --headless "+TSUpdateSync" +qa
 }
 
