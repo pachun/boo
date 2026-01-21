@@ -9,7 +9,7 @@ window#waybar {
 }
 
 #custom-workspaces {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 #custom-weather {
@@ -21,7 +21,7 @@ window#waybar {
 #network,
 #bluetooth,
 #battery {
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 #battery {
