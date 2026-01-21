@@ -1,6 +1,14 @@
 #!/bin/bash
 cache_file="/tmp/waybar-weather-cache"
 
+# Wait for network connectivity (max 30 seconds)
+for i in {1..15}; do
+    if ping -c 1 -W 1 1.1.1.1 &>/dev/null; then
+        break
+    fi
+    sleep 2
+done
+
 # Fetch weather and sun times from wttr.in (5 second timeout)
 weather=$(curl -sf --max-time 10 "wttr.in/?format=%t+%c+%s+%S" 2>/dev/null)
 
