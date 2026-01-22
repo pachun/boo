@@ -1,40 +1,6 @@
 # Arch Install
 
-## Option 1: Custom Boo ISO (Recommended)
-
-Build a custom installer ISO that automates everything.
-
-### Build the ISO
-
-On an existing Arch system:
-
-```
-cd ~/code/boo/arch/iso
-./build.sh
-```
-
-This creates `arch/iso/out/boo-arch-*.iso`.
-
-### Flash to USB
-
-Use [Balena Etcher](https://etcher.balena.io/#download-etcher) or:
-
-```
-sudo dd if=arch/iso/out/boo-arch-*.iso of=/dev/sdX bs=4M status=progress oflag=sync
-```
-
-### Install
-
-1. Boot from USB (F12 on Framework)
-2. Follow the TUI wizard - enter WiFi, encryption password, hostname, timezone, username
-3. Wait for installation to complete
-4. Remove USB and reboot into Hyprland
-
----
-
-## Option 2: Manual Install
-
-### 1. Create bootable USB
+## 1. Create bootable USB
 
 [Download Arch ISO](https://archlinux.org/download/)
 
@@ -42,17 +8,17 @@ sudo dd if=arch/iso/out/boo-arch-*.iso of=/dev/sdX bs=4M status=progress oflag=s
 
 Flash the ISO to USB with Balena Etcher.
 
-### 2. Boot from USB
+## 2. Boot from USB
 
 Plug USB into Framework laptop and boot while spamming F12. Select "Arch Linux install medium".
 
-### 3. Connect to WiFi
+## 3. Connect to WiFi
 
 ```
 iwctl --passphrase "PASSWORD" station wlan0 connect "NETWORK_NAME"
 ```
 
-### 4. Run archinstall
+## 4. Run archinstall
 
 ```
 archinstall
@@ -71,7 +37,7 @@ Settings:
 
 Install and reboot.
 
-### 5. First boot
+## 5. First boot
 
 Sign in (ignore Framework USB-C errors).
 
@@ -85,7 +51,7 @@ Connect to WiFi:
 nmtui
 ```
 
-### 6. Clone and install
+## 6. Clone and install
 
 ```
 sudo pacman -S git
@@ -94,7 +60,7 @@ cd ~/code/boo
 ./install.sh
 ```
 
-### 7. Set up GitHub SSH keys
+## 7. Set up GitHub SSH keys
 
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
@@ -111,9 +77,7 @@ cd ~/code/boo
 git remote set-url origin git@github.com:pachun/boo.git
 ```
 
----
-
-## Hyprland Keybindings
+## Hyprland keybindings
 
 - Super + Enter → Terminal (Ghostty)
 - Super + B → Browser (Chromium)
