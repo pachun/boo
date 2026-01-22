@@ -86,6 +86,16 @@ function create_gitconfig_dotfile {
 EOF
 }
 
+function generate_ssh_key_on_arch {
+  if [[ "$OS" == "arch" && ! -f "$HOME/.ssh/id_ed25519" ]]; then
+    mkdir -p "$HOME/.ssh"
+    chmod 700 "$HOME/.ssh"
+    ssh-keygen -t ed25519 -C "$git_email" -f "$HOME/.ssh/id_ed25519" -N ""
+    eval "$(ssh-agent -s)"
+    ssh-add "$HOME/.ssh/id_ed25519"
+  fi
+}
+
 function symlink_dotfiles {
   mkdir -p "$HOME/.config"
 
@@ -229,6 +239,7 @@ install_package_manager
 install_packages
 enable_asdf_autocompletions
 create_gitconfig_dotfile
+generate_ssh_key_on_arch
 symlink_dotfiles
 sync_theme
 install_nvim_plugins
