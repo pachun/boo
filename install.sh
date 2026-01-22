@@ -137,8 +137,7 @@ function install_asdf_plugins {
 }
 
 function install_claude {
-  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-  npm install -g @anthropic-ai/claude-code
+  curl -fsSL https://claude.ai/install.sh | sh
 }
 
 function install_gitspine {
