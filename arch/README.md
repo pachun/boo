@@ -84,6 +84,11 @@ git remote set-url origin git@github.com:pachun/boo.git
 ## Hyprland keybindings
 
 - Super + Enter → Terminal (Ghostty)
-- Super + B → Browser (Chromium)
-- Super + Q → Close window
-- Super + M → Exit Hyprland
+- Super + b → Browser (Chromium)
+- Super + q → Close window
+- Super + m → Exit Hyprland
+- Super + c → Copy
+- Super + v → Paste
+- Super + a → Select all
+- Super + { → Select browser tab to the left
+- Super + } → Select browser tab to the right
