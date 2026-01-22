@@ -16,8 +16,6 @@ HOSTNAME=""
 TIMEZONE=""
 USERNAME=""
 USER_PASS=""
-GIT_NAME=""
-GIT_EMAIL=""
 TARGET_DISK=""
 
 # Find the main disk (usually nvme or sda)
@@ -39,35 +37,10 @@ welcome() {
 
 # WiFi configuration
 configure_wifi() {
-    # Scan for networks
-    dialog --title "WiFi Setup" --infobox "Scanning for WiFi networks..." 3 40
-    iwctl station wlan0 scan
-    sleep 3
-
-    # Get list of networks
-    NETWORKS=$(iwctl station wlan0 get-networks | tail -n +5 | head -n -1 | awk '{print $1}' | grep -v '^$' | head -10)
-
-    if [[ -z "$NETWORKS" ]]; then
-        # Fallback to manual entry if no networks found
-        WIFI_SSID=$(dialog --title "WiFi Setup" --inputbox "No networks found. Enter WiFi network name (SSID):" 8 50 3>&1 1>&2 2>&3)
-    else
-        # Build menu options
-        MENU_OPTIONS=()
-        while IFS= read -r network; do
-            MENU_OPTIONS+=("$network" "")
-        done <<< "$NETWORKS"
-        MENU_OPTIONS+=("Other" "Enter manually")
-
-        WIFI_SSID=$(dialog --title "WiFi Setup" --menu "Select WiFi network:" 18 50 10 "${MENU_OPTIONS[@]}" 3>&1 1>&2 2>&3)
-
-        if [[ "$WIFI_SSID" == "Other" ]]; then
-            WIFI_SSID=$(dialog --title "WiFi Setup" --inputbox "Enter WiFi network name (SSID):" 8 50 3>&1 1>&2 2>&3)
-        fi
-    fi
-
+    WIFI_SSID=$(dialog --title "WiFi Setup" --inputbox "Enter WiFi network name (SSID):" 8 50 3>&1 1>&2 2>&3)
     [[ -z "$WIFI_SSID" ]] && exit 1
 
-    WIFI_PASS=$(dialog --title "WiFi Setup" --insecure --passwordbox "Enter WiFi password for '$WIFI_SSID':" 8 50 3>&1 1>&2 2>&3)
+    WIFI_PASS=$(dialog --title "WiFi Setup" --insecure --passwordbox "Enter WiFi password:" 8 50 3>&1 1>&2 2>&3)
     [[ -z "$WIFI_PASS" ]] && exit 1
 }
 
@@ -127,15 +100,6 @@ configure_user() {
     done
 }
 
-# Git configuration
-configure_git() {
-    GIT_NAME=$(dialog --title "Git Setup" --inputbox "Enter your name for git commits:" 8 50 3>&1 1>&2 2>&3)
-    [[ -z "$GIT_NAME" ]] && exit 1
-
-    GIT_EMAIL=$(dialog --title "Git Setup" --inputbox "Enter your email for git commits:" 8 50 3>&1 1>&2 2>&3)
-    [[ -z "$GIT_EMAIL" ]] && exit 1
-}
-
 # Confirm settings
 confirm_settings() {
     TARGET_DISK=$(detect_disk)
@@ -150,10 +114,9 @@ WiFi: $WIFI_SSID\n\
 Hostname: $HOSTNAME\n\
 Timezone: $TIMEZONE\n\
 Username: $USERNAME\n\
-Git: $GIT_NAME <$GIT_EMAIL>\n\
 Target Disk: $TARGET_DISK\n\n\
 WARNING: This will ERASE $TARGET_DISK!\n\n\
-Continue?" 20 50
+Continue?" 18 50
 }
 
 # Connect to WiFi
@@ -286,27 +249,9 @@ install_boo() {
     echo -e "${GREEN}Installing boo dotfiles...${NC}"
 
     arch-chroot /mnt /bin/bash <<CHROOT
-su - $USERNAME <<USERCHROOT
+su - $USERNAME <<'USERCHROOT'
 mkdir -p ~/code
 git clone https://github.com/pachun/boo ~/code/boo
-
-# Create gitconfig before running install.sh to avoid interactive prompt
-cat > ~/code/boo/dotfiles/gitconfig <<EOF
-[user]
-  name = $GIT_NAME
-  email = $GIT_EMAIL
-
-[init]
-  defaultBranch = main
-
-[format]
-  pretty = format:%C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an, %cr]%Creset
-
-[core]
-  editor = nvim
-  excludesFile = ~/.gitignore
-EOF
-
 cd ~/code/boo
 ./install.sh
 USERCHROOT
@@ -333,7 +278,6 @@ main() {
     configure_hostname
     configure_timezone
     configure_user
-    configure_git
     confirm_settings
 
     # Exit dialog mode for installation output
