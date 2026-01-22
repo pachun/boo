@@ -25,9 +25,10 @@ archinstall
 ```
 
 Settings:
+
 - Mirrors → United States
 - Disk Configuration → Use best-effort → Select SSD → ext4 → No separate /home
-- Disk Encryption → LUKS (set password)
+- Disk Encryption → LUKS (set password and partition or it won't apply)
 - Hostname → Name your machine
 - Root Password → Set one
 - User Account → Create user with sudo
@@ -42,11 +43,13 @@ Install and reboot.
 Sign in (ignore Framework USB-C errors).
 
 Double the font size:
+
 ```
 setfont -d
 ```
 
 Connect to WiFi:
+
 ```
 nmtui
 ```
@@ -72,6 +75,7 @@ cat ~/.ssh/id_ed25519.pub
 Add the public key to GitHub: https://github.com/settings/ssh/new
 
 Switch repo to SSH:
+
 ```
 cd ~/code/boo
 git remote set-url origin git@github.com:pachun/boo.git
