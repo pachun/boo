@@ -45,7 +45,7 @@ function install_packages {
     sudo pacman -S --needed --noconfirm \
       neovim tmux zsh ripgrep git base-devel rust unzip curl \
       hyprland hyprpaper waybar ttf-nerd-fonts-symbols noto-fonts-emoji network-manager-applet chromium openssh \
-      zsh-syntax-highlighting direnv postgresql keyd \
+      zsh-syntax-highlighting direnv postgresql keyd plymouth \
       tree-sitter tree-sitter-cli wl-clipboard less pacman-contrib socat brightnessctl
     # audio
     sudo pacman -S --needed --noconfirm \
@@ -213,6 +213,51 @@ function enable_autologin_on_arch {
   fi
 }
 
+function setup_plymouth_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    # Plymouth with systemd hooks for proper graphical LUKS password prompt
+    # Ref: https://wiki.archlinux.org/title/Plymouth
+    # Ref: https://srijan.ch/graphical-password-prompt-for-disk-decryption
+
+    # Convert mkinitcpio.conf to systemd-based hooks for Plymouth integration
+    # From: base udev ... keyboard keymap consolefont block encrypt ...
+    # To:   base systemd plymouth ... keyboard sd-vconsole block sd-encrypt ...
+    if grep -q "^HOOKS=.*\budev\b" /etc/mkinitcpio.conf; then
+      sudo sed -i 's/\budev\b/systemd plymouth/' /etc/mkinitcpio.conf
+      sudo sed -i 's/\bkeymap consolefont\b/sd-vconsole/' /etc/mkinitcpio.conf
+      sudo sed -i 's/\bencrypt\b/sd-encrypt/' /etc/mkinitcpio.conf
+      # Remove any leftover plymouth-encrypt from previous attempts
+      sudo sed -i 's/plymouth-encrypt/sd-encrypt/' /etc/mkinitcpio.conf
+    fi
+
+    # Convert bootloader from cryptdevice= to rd.luks.name= format for sd-encrypt
+    local entry_file=$(ls /boot/loader/entries/*.conf 2>/dev/null | head -1)
+    if [[ -n "$entry_file" ]]; then
+      if grep -q "cryptdevice=" "$entry_file"; then
+        # Get the LUKS UUID (not PARTUUID)
+        local luks_uuid=$(lsblk -f -o UUID,FSTYPE | grep crypto_LUKS | awk '{print $1}')
+        if [[ -n "$luks_uuid" ]]; then
+          # Replace cryptdevice=PARTUUID=xxx:root with rd.luks.name=UUID=root
+          sudo sed -i "s/cryptdevice=PARTUUID=[^:]*:root/rd.luks.name=$luks_uuid=root/" "$entry_file"
+        fi
+      fi
+
+      # Add quiet splash if not present
+      if ! grep -q "quiet splash" "$entry_file"; then
+        sudo sed -i '/^options/ s/$/ quiet splash/' "$entry_file"
+      fi
+    fi
+
+    # Install custom catppuccin-frappe plymouth theme (uses two-step module)
+    sudo mkdir -p /usr/share/plymouth/themes/catppuccin-frappe
+    sudo cp "$PWD/plymouth/catppuccin-frappe/"* /usr/share/plymouth/themes/catppuccin-frappe/
+    # Copy password dialog images from spinner theme (two-step module needs these)
+    sudo cp /usr/share/plymouth/themes/spinner/{bullet.png,entry.png,lock.png,capslock.png,keyboard.png} \
+      /usr/share/plymouth/themes/catppuccin-frappe/
+    sudo plymouth-set-default-theme -R catppuccin-frappe
+  fi
+}
+
 function use_zsh {
   chsh -s /bin/zsh
 }
@@ -254,5 +299,6 @@ start_bluetooth_on_arch
 use_dark_mode_on_arch
 setup_nordvpn_on_arch
 enable_autologin_on_arch
+setup_plymouth_on_arch
 use_zsh
 start_hyprland_on_arch
