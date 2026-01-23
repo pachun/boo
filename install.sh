@@ -55,7 +55,7 @@ function install_packages {
     sudo pacman -S --needed --noconfirm bluez bluez-utils blueman
     # portal for dark mode detection in browsers
     sudo pacman -S --needed --noconfirm xdg-desktop-portal xdg-desktop-portal-gtk
-    yay -S --needed --noconfirm ghostty asdf-vm nordvpn-bin spotify hyprswitch
+    yay -S --needed --noconfirm ghostty asdf-vm nordvpn-bin spotify hyprswitch pamac-aur
   fi
 }
 
