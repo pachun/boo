@@ -106,10 +106,10 @@ function symlink_dotfiles {
       # symlink each item inside config individually
       for config_item in $PWD/dotfiles/config/*; do
         config_name=$(basename "$config_item")
-        ln -sf "$config_item" "$HOME/.config/$config_name"
+        ln -sfn "$config_item" "$HOME/.config/$config_name"
       done
     else
-      ln -sf "$file" "$HOME/.$filename"
+      ln -sfn "$file" "$HOME/.$filename"
     fi
   done
 
@@ -127,10 +127,10 @@ function symlink_dotfiles {
       if [[ "$filename" == "config" ]]; then
         for config_item in $os_dotfiles/config/*; do
           config_name=$(basename "$config_item")
-          ln -sf "$config_item" "$HOME/.config/$config_name"
+          ln -sfn "$config_item" "$HOME/.config/$config_name"
         done
       else
-        ln -sf "$file" "$HOME/.$filename"
+        ln -sfn "$file" "$HOME/.$filename"
       fi
     done
   fi
