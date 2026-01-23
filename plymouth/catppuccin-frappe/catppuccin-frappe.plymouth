@@ -1,0 +1,35 @@
+[Plymouth Theme]
+Name=Catppuccin Frappe
+Description=Minimal theme with Catppuccin Frappe colors
+ModuleName=two-step
+
+[two-step]
+Font=Cantarell 12
+TitleFont=Cantarell Light 30
+ImageDir=/usr/share/plymouth/themes/catppuccin-frappe
+DialogHorizontalAlignment=.5
+DialogVerticalAlignment=.5
+TitleHorizontalAlignment=.5
+TitleVerticalAlignment=.382
+HorizontalAlignment=.5
+VerticalAlignment=.5
+WatermarkHorizontalAlignment=.5
+WatermarkVerticalAlignment=.96
+Transition=none
+TransitionDuration=0.0
+BackgroundStartColor=0x303446
+BackgroundEndColor=0x303446
+ProgressBarBackgroundColor=0x51576d
+ProgressBarForegroundColor=0xc6d0f5
+MessageBelowAnimation=false
+SuppressMessages=true
+
+[boot-up]
+UseEndAnimation=false
+SuppressMessages=true
+
+[shutdown]
+UseEndAnimation=false
+
+[reboot]
+UseEndAnimation=false
