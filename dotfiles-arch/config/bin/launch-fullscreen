@@ -1,0 +1,20 @@
+#!/bin/bash
+# Launch an app fullscreen on the next empty workspace
+
+# Find first empty workspace (check 1-10)
+for i in {1..10}; do
+  windows=$(hyprctl workspaces -j | jq ".[] | select(.id == $i) | .windows")
+  if [[ -z "$windows" || "$windows" == "0" ]]; then
+    empty_ws=$i
+    break
+  fi
+done
+
+# Default to workspace 1 if somehow none are empty
+empty_ws=${empty_ws:-1}
+
+# Switch to empty workspace, launch app, then fullscreen it
+hyprctl dispatch workspace "$empty_ws"
+$@ &
+sleep 0.3
+hyprctl dispatch fullscreen 1

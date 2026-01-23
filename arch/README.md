@@ -89,7 +89,10 @@ git remote set-url origin git@github.com:pachun/boo.git
 - Super + a → Select all
 - Super + { → Select browser tab to the left
 - Super + } → Select browser tab to the right
+- Super + t → New browser tab
+- Super + w → Close browser tab
 - Super + tab → Switch to next hyprland window
 - Super + ` (grave) → Switch to previous hyprland window
 - Super + p → Color picker (hyprpicker)
 - Super + i (read: install) → Install packages (pacman & AUR with pamac-manager)
+- Super + l → Lock screen (applies when laptop is closed as well)
