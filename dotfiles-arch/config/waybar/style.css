@@ -1,6 +1,7 @@
 * {
-  font-family: "Symbols Nerd Font", "MonoLisa Variable", monospace;
-  font-size: 14px;
+  font-family: "Symbols Nerd Font", "SF Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 window#waybar {
@@ -8,22 +9,31 @@ window#waybar {
   color: #c6d0f5;
 }
 
+/* Edge margins */
 #custom-workspaces {
-  padding-left: 20px;
+  padding-left: 16px;
 }
 
-#custom-weather {
-  padding-right: 15px;
+#custom-clock {
+  padding-right: 24px;
 }
 
+/* Consistent spacing between all right-side items */
 #custom-updates,
+#custom-weather,
 #custom-nordvpn,
 #network,
 #bluetooth,
-#battery {
-  padding: 0 10px;
+#battery,
+#custom-date,
+#custom-clock {
+  padding-left: 24px;
+  font-weight: 500;
 }
 
-#battery {
-  padding-right: 20px;
+/* Scale down oversized icons and fix vertical alignment */
+#network,
+#bluetooth {
+  font-size: 15px;
+  padding-top: 2px;
 }

@@ -6,9 +6,9 @@ active=$(hyprctl activeworkspace | grep "workspace ID" | awk '{print $3}')
 text=""
 for id in $ids; do
     if [ "$id" = "$active" ]; then
-        text+="<span color=\\\"#c6d0f5\\\">$id</span> "
+        text+="<span color=\\\"#c6d0f5\\\">$id</span>   "
     else
-        text+="<span color=\\\"#737994\\\">$id</span> "
+        text+="<span color=\\\"#737994\\\">$id</span>   "
     fi
 done
 echo "{\"text\": \"$text\"}"

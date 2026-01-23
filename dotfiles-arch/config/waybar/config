@@ -1,8 +1,8 @@
 {
-  "height": 30,
+  "height": 36,
   "modules-left": ["custom/workspaces"],
-  "modules-center": ["custom/weather", "custom/clock"],
-  "modules-right": ["custom/updates", "custom/nordvpn", "network", "bluetooth", "battery"],
+  "modules-center": [],
+  "modules-right": ["custom/updates", "custom/nordvpn", "network", "bluetooth", "battery", "custom/weather", "custom/date", "custom/clock"],
 
   "network": {
     "format-wifi": "󰤨",
@@ -27,9 +27,15 @@
     "format-icons": ["󰁺", "󰁼", "󰁾", "󰂀", "󰁹"]
   },
 
+  "custom/date": {
+    "interval": 60,
+    "exec": "date '+%a %b %-d'",
+    "tooltip": false
+  },
+
   "custom/clock": {
     "interval": 60,
-    "exec": "date '+%A %B %d  %-I:%M %p'",
+    "exec": "date '+%-I:%M %p'",
     "tooltip": false
   },
 

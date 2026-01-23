@@ -134,6 +134,8 @@ function use_aliases {
   fi
   if [[ "$OS" == "arch" ]]; then
     alias battery="cat /sys/class/power_supply/BAT1/capacity"
+    # stem darkening makes fonts slightly bolder (more mac-like)
+    export FREETYPE_PROPERTIES="cff:no-stem-darkening=0 autofitter:no-stem-darkening=0"
   fi
   function keep {
     if [[ -z "$1" ]]; then
