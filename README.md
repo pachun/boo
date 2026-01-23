@@ -10,6 +10,8 @@ _The lazy ghost_.
 
 Boo is a list of things that I install and configure on new or re-imaged Mac machines.
 
+_Looking for the [Arch setup](arch/README.md)?_
+
 - [Apps](#apps)
 - [System Settings](#system-settings)
 - [Finder Settings](#finder-settings)
