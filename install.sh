@@ -14,6 +14,23 @@ function install_monolisa_font {
   fi
 }
 
+function install_sf_fonts_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    cd /tmp
+    curl -LO https://devimages-cdn.apple.com/design/resources/download/SF-Pro.dmg
+    7z x -y SF-Pro.dmg > /dev/null
+    7z x -y "SFProFonts/SF Pro Fonts.pkg" > /dev/null
+    7z x -y SFProFonts/SFProFonts.pkg/Payload > /dev/null
+    7z x -y "SFProFonts/SFProFonts.pkg/Payload~" > /dev/null
+    mkdir -p $HOME/.local/share/fonts/SF-Pro
+    cp SFProFonts/SFProFonts.pkg/Library/Fonts/*.otf $HOME/.local/share/fonts/SF-Pro/
+    cp SFProFonts/SFProFonts.pkg/Library/Fonts/*.ttf $HOME/.local/share/fonts/SF-Pro/
+    rm -rf SF-Pro.dmg SFProFonts 3.hfs
+    fc-cache -f
+    cd - > /dev/null
+  fi
+}
+
 function set_desktop_wallpaper_on_mac {
   if [[ "$OS" == "mac" ]]; then
     osascript -e 'tell application "Finder" to set desktop picture to POSIX file "'$PWD/assets/less\ is\ less.png'"'
@@ -43,7 +60,7 @@ function install_packages {
     brew bundle
   elif [[ "$OS" == "arch" ]]; then
     sudo pacman -S --needed --noconfirm \
-      neovim tmux zsh ripgrep git base-devel rust unzip curl jq \
+      neovim tmux zsh ripgrep git base-devel rust unzip curl jq 7zip \
       hyprland hyprpaper hyprpicker hyprlock waybar mako libnotify ttf-nerd-fonts-symbols noto-fonts-emoji network-manager-applet chromium openssh \
       zsh-syntax-highlighting direnv postgresql keyd plymouth \
       tree-sitter tree-sitter-cli wl-clipboard less pacman-contrib socat brightnessctl
@@ -279,6 +296,7 @@ function start_hyprland_on_arch {
 }
 
 install_monolisa_font
+install_sf_fonts_on_arch
 set_desktop_wallpaper_on_mac
 install_package_manager
 install_packages
