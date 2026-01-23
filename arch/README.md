@@ -89,3 +89,5 @@ git remote set-url origin git@github.com:pachun/boo.git
 - Super + a → Select all
 - Super + { → Select browser tab to the left
 - Super + } → Select browser tab to the right
+- Super + tab → Switch to next hyprland window
+- Super + ` (grave) → Switch to previous hyprland window
