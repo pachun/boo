@@ -92,3 +92,4 @@ git remote set-url origin git@github.com:pachun/boo.git
 - Super + tab → Switch to next hyprland window
 - Super + ` (grave) → Switch to previous hyprland window
 - Super + p → Color picker (hyprpicker)
+- Super + i (read: install) → Install packages (pacman & AUR with pamac-manager)
