@@ -82,8 +82,8 @@ git remote set-url origin git@github.com:pachun/boo.git
 
 - Super + Enter → Terminal (Ghostty)
 - Super + b → Browser (Chromium)
+- Super + s → Spotify
 - Super + q → Close window
-- Super + m → Exit Hyprland
 - Super + c → Copy
 - Super + v → Paste
 - Super + a → Select all
@@ -96,3 +96,4 @@ git remote set-url origin git@github.com:pachun/boo.git
 - Super + p → Color picker (hyprpicker)
 - Super + i (read: install) → Install packages (pacman & AUR with pamac-manager)
 - Super + l → Lock screen (applies when laptop is closed as well)
+- Super + m → Exit Hyprland
