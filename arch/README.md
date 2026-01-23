@@ -1,5 +1,7 @@
 # Arch Install
 
+Steps to set up a [Framework 13](https://frame.work/laptop13) laptop to feel as close to my Mac setup as possible, with a few improvements only Arch allows.
+
 ## 1. Create bootable USB
 
 [Download Arch ISO](https://archlinux.org/download/)
@@ -40,7 +42,7 @@ Install and reboot.
 
 ## 5. First boot
 
-Sign in (ignore Framework USB-C errors).
+Enter your disk encryption password, then sign in (ignore Framework USB-C errors).
 
 Double the font size:
 
