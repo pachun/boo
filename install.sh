@@ -189,11 +189,22 @@ function remap_keys_on_arch {
 
 function disable_ipv6_on_arch {
   if [[ "$OS" == "arch" ]]; then
-    # Disable IPv6 to avoid 5s DNS timeouts on networks with broken IPv6
+    # Disable IPv6 to avoid timeouts on networks with broken IPv6
     # (router hands out IPv6 addresses but can't route IPv6 traffic)
     if [[ ! -f /etc/sysctl.d/40-ipv6.conf ]]; then
       echo -e "net.ipv6.conf.all.disable_ipv6 = 1\nnet.ipv6.conf.default.disable_ipv6 = 1" | sudo tee /etc/sysctl.d/40-ipv6.conf
       sudo sysctl --system
+    fi
+  fi
+}
+
+function use_cloudflare_dns_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    # Use Cloudflare DNS instead of router DNS to avoid slow AAAA query responses
+    local active_conn=$(nmcli -t -f NAME,TYPE con show --active | grep -v loopback | cut -d: -f1 | head -1)
+    if [[ -n "$active_conn" ]]; then
+      nmcli con modify "$active_conn" ipv4.dns "1.1.1.1 1.0.0.1" ipv4.ignore-auto-dns yes
+      nmcli con up "$active_conn"
     fi
   fi
 }
@@ -220,6 +231,17 @@ function setup_nordvpn_on_arch {
   if [[ "$OS" == "arch" ]]; then
     sudo systemctl enable --now nordvpnd
     sudo gpasswd -a $USER nordvpn
+  fi
+}
+
+function add_hostname_to_hosts_on_arch {
+  if [[ "$OS" == "arch" ]]; then
+    # Add hostname to /etc/hosts to avoid slow DNS resolution timeouts
+    # (Node.js and other apps try to resolve the local hostname on startup)
+    local hostname=$(cat /etc/hostname)
+    if ! grep -qF "$hostname" /etc/hosts; then
+      echo "127.0.0.1        $hostname" | sudo tee -a /etc/hosts > /dev/null
+    fi
   fi
 }
 
@@ -312,6 +334,8 @@ install_gitspine
 start_postgres
 remap_keys_on_arch
 disable_ipv6_on_arch
+use_cloudflare_dns_on_arch
+add_hostname_to_hosts_on_arch
 start_audio_on_arch
 start_bluetooth_on_arch
 use_dark_mode_on_arch
